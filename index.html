@@ -1,0 +1,2017 @@
+<!DOCTYPE html>
+<html lang="es" style="scroll-behavior: smooth;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relax Natural Zen - Masajes Profesionales</title>
+<!DOCTYPE html>
+<html lang="es" style="scroll-behavior: smooth;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relax Natural Zen - Masajes Profesionales</title>
+    <!-- Incluye Tailwind CSS para un diseño responsivo y moderno -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Incluye Font Awesome para el ícono de WhatsApp, Facebook y métodos de pago -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Estilos personalizados para la fuente y el fondo */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f9ff; /* Un tono de azul muy suave, casi blanco, para un ambiente relajante */
+            line-height: 1.6; /* Mejora la legibilidad general */
+            color: #333; /* Color de texto base más oscuro para mejor contraste */
+        }
+        /* Estilo para la transición de testimonios */
+        .testimonial-fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        /* Estilo para el botón de volver arriba */
+        .scroll-to-top {
+            display: none; /* Oculto por defecto, se muestra con JS */
+            transition: opacity 0.3s ease-in-out; /* Transición suave para aparecer/desaparecer */
+        }
+        /* Asegura que el contenido no quede oculto bajo la barra de navegación fija */
+        .content-offset {
+            padding-top: 5rem; /* Espacio para la barra de navegación en pantallas pequeñas */
+        }
+        @media (min-width: 768px) {
+            .content-offset {
+                padding-top: 6rem; /* Ajuste para tablets */
+            }
+        }
+        @media (min-width: 1024px) {
+            .content-offset {
+                padding-top: 7rem; /* Ajuste para desktops */
+            }
+        }
+        /* Hover effect for buttons to enhance visual feedback and appeal */
+        .btn-hover-effect:hover {
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+            transform: translateY(-2px); /* Slight lift */
+        }
+        .btn-green-pulse:hover {
+            animation: pulse 1s infinite;
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.7); } /* Tailwind green-500 */
+            70% { box-shadow: 0 0 0 10px rgba(52, 211, 153, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0); }
+        }
+        /* Ensure readable text on gradient backgrounds */
+        /* Ajuste de colores para gradientes para mayor contraste y sofisticación */
+        .bg-gradient-soft-blue {
+            background-image: linear-gradient(to bottom right, #e0f7fa, #b2ebf2); /* Azul cielo suave */
+        }
+        .bg-gradient-soft-green {
+            background-image: linear-gradient(to bottom right, #e8f5e9, #c8e6c9); /* Verde menta suave */
+        }
+        .bg-gradient-soft-purple {
+            background-image: linear-gradient(to bottom right, #f3e5f5, #e1bee7); /* Morado lavanda suave */
+        }
+        .bg-gradient-soft-orange {
+            background-image: linear-gradient(to bottom right, #fff3e0, #ffe0b2); /* Naranja melocotón suave */
+        }
+        /* Specific contrast adjustments */
+        .bg-teal-700 .nav-link {
+            color: #ffffff; /* Explicit white for navigation links */
+        }
+        .bg-teal-700 .nav-link:hover {
+            color: #d1fae5; /* Lighter teal for hover */
+        }
+        /* Hero Section Styling */
+        .hero-section {
+            position: relative;
+            width: 100%;
+            height: 20rem; /* Responsive height */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            overflow: hidden;
+        }
+        @media (min-width: 768px) {
+            .hero-section {
+                height: 28rem;
+            }
+        }
+        @media (min-width: 1024px) {
+            .hero-section {
+                height: 36rem;
+            }
+        }
+        .hero-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            filter: brightness(0.7); /* Oscurece la imagen para que el texto resalte */
+        }
+        .hero-overlay-content {
+            position: relative;
+            z-index: 10;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra para mejor legibilidad del texto */
+        }
+        /* Animation for the welcome text */
+        .animated-welcome {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: slideInUp 1.5s ease-out forwards;
+            animation-delay: 0.5s; /* Delay the animation slightly */
+        }
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        /* FAQ Accordion Styles */
+        .accordion-item {
+            border-bottom: 1px solid #e2e8f0; /* Tailwind gray-200 */
+        }
+        .accordion-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            cursor: pointer;
+            font-weight: 600;
+            color: #333;
+            transition: color 0.3s ease;
+        }
+        .accordion-header:hover {
+            color: #0d9488; /* Tailwind teal-700 */
+        }
+        .accordion-icon {
+            transition: transform 0.3s ease;
+        }
+        .accordion-header.active .accordion-icon {
+            transform: rotate(180deg);
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            padding-bottom: 0;
+        }
+        .accordion-content.open {
+            max-height: 200px; /* Adjust based on expected content height */
+            padding-bottom: 1rem;
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8 lg:p-12 min-h-screen flex flex-col items-center justify-center">
+    <!-- Ancla para el botón "Volver Arriba" -->
+    <div id="top"></div>
+    <!-- Barra de Navegación Superior -->
+    <nav class="fixed top-0 left-0 w-full bg-teal-700 text-white p-4 z-50 shadow-lg">
+        <div class="max-w-6xl mx-auto flex flex-wrap justify-center md:justify-around items-center gap-2 sm:gap-4">
+            <a href="#filosofia" class="nav-link hover:bg-teal-600 transition duration-300 text-base md:text-lg font-semibold px-2 py-1 rounded-full">Filosofía</a>
+            <a href="#servicios" class="nav-link hover:bg-teal-600 transition duration-300 text-base md:text-lg font-semibold px-2 py-1 rounded-full">Servicios</a>
+            <a href="#paquetes" class="nav-link hover:bg-teal-600 transition duration-300 text-base md:text-lg font-semibold px-2 py-1 rounded-full">Paquetes</a>
+            <a href="#terapeuta" class="nav-link hover:bg-teal-600 transition duration-300 text-base md:text-lg font-semibold px-2 py-1 rounded-full">Terapeuta</a>
+            <a href="#pagos" class="nav-link hover:bg-teal-600 transition duration-300 text-base md:text-lg font-semibold px-2 py-1 rounded-full">Pagos</a>
+            <a href="#politica" class="nav-link hover:bg-teal-600 transition duration-300 text-base md:text-lg font-semibold px-2 py-1 rounded-full">Política</a>
+            <a href="#faq" class="nav-link hover:bg-teal-600 transition duration-300 text-base md:text-lg font-semibold px-2 py-1 rounded-full">FAQ</a>
+            <a href="#testimonios" class="nav-link hover:bg-teal-600 transition duration-300 text-base md:text-lg font-semibold px-2 py-1 rounded-full">Opiniones</a>
+            <a href="#contacto" class="nav-link hover:bg-teal-600 transition duration-300 text-base md:text-lg font-semibold px-2 py-1 rounded-full">Contacto</a>
+        </div>
+    </nav>
+    <!-- Espacio para la barra de navegación fija -->
+    <div class="content-offset w-full"></div>
+    <!-- Sección de Imagen de Encabezado Principal (Hero Section) -->
+    <div class="w-full max-w-6xl mb-12 rounded-xl overflow-hidden shadow-2xl border-b-8 border-teal-500 hero-section">
+        <img
+            src="https://i.ibb.co/Q7xkTw9F/imagen-de-fondo-para-relax-natural-zen.png"
+            alt="Ambiente de spa relajante con toallas, velas y piedras, representando los masajes profesionales de Relax Natural Zen."
+            class="hero-image"
+            onerror="this.onerror=null; this.src='https://placehold.co/1200x400/CCCCCC/000000?text=Error+al+cargar+imagen+principal';"
+        >
+        <div class="hero-overlay-content p-4">
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-4 leading-tight">
+                <span class="text-white">Relax Natural Zen</span>
+            </h1>
+            <p class="text-3xl md:text-4xl lg:text-5xl animated-welcome">
+                Sumérgete en la calma. Tu Bienestar Comienza Aquí.
+            </p>
+        </div>
+    </div>
+    <div class="max-w-5xl w-full bg-white rounded-xl shadow-2xl p-6 md:p-10 lg:p-12 text-center border-t-8 border-teal-500">
+        <!-- Encabezado de la página (El h1 anterior ahora está en el hero section) -->
+        <p class="text-xl md:text-2xl text-gray-700 mb-8 leading-relaxed">
+            Tu oasis de bienestar y relajación. Nos encanta lo **natural**, por eso nuestro nombre. Ofrecemos masajes profesionales en la comodidad de tu hogar o en nuestro espacio dedicado.
+        </p>
+        <!-- Botón de WhatsApp inicial -->
+        <div class="mb-10">
+            <a href="https://wa.me/50686921010" target="_blank" class="inline-block bg-green-500 text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-green-600 transition duration-300 transform hover:scale-105 shadow-md btn-hover-effect btn-green-pulse">
+                <i class="fab fa-whatsapp mr-2" aria-hidden="true"></i> Contáctanos por WhatsApp
+            </a>
+        </div>
+        <!-- Sección de Filosofía y Compromiso -->
+        <div id="filosofia" class="mt-12 p-8 bg-gradient-soft-green rounded-xl shadow-lg border border-green-200">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Nuestra Filosofía y Compromiso</h2>
+            <p class="text-lg text-gray-700 mb-4 text-center">
+                En **Relax Natural Zen**, nos enfocamos en el **bienestar integral** de nuestros pacientes. Sabemos que sentirse bien por dentro y por fuera es fundamental, por eso nuestra pasión es ayudarte a mejorar tu **salud mental y física**.
+            </p>
+            <ul class="text-gray-700 text-left space-y-3 px-4 md:px-8">
+                <li class="flex items-start">
+                    <i class="fas fa-leaf text-green-700 mt-1 mr-3 text-2xl" aria-hidden="true"></i>
+                    <div>
+                        <strong class="text-xl text-gray-800">Enfoque Natural:</strong> Valoramos profundamente lo natural, por eso nuestro nombre refleja este compromiso.
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <i class="fas fa-boxes text-purple-700 mt-1 mr-3 text-2xl" aria-hidden="true"></i>
+                    <div>
+                        <strong class="text-xl text-gray-800">Próximamente Productos 100% Naturales:</strong> Muy pronto tendremos productos para complementar tu bienestar. Para más información, contáctanos por WhatsApp.
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <i class="fas fa-dollar-sign text-blue-700 mt-1 mr-3 text-2xl" aria-hidden="true"></i>
+                    <div>
+                        <strong class="text-xl text-gray-800">Precios Accesibles y Profesionales:</strong> Nos esforzamos por brindar servicios de alta calidad a precios justos, para que el bienestar sea accesible para todos.
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <i class="fas fa-tools text-yellow-700 mt-1 mr-3 text-2xl" aria-hidden="true"></i>
+                    <div>
+                        <strong class="text-xl text-gray-800">Calidad en Cada Sesión:</strong> Combinamos aparatología moderna y técnicas manuales expertas para ofrecer terapias de la más alta calidad y efectividad.
+                    </div>
+                </li>
+            </ul>
+            <p class="text-lg text-gray-700 mt-6 text-center">
+                Tu salud y comodidad son nuestra prioridad.
+            </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 mt-12">
+            <!-- Sección de servicios en casa -->
+            <div class="bg-gradient-soft-blue p-6 rounded-lg shadow-lg flex flex-col items-center transform transition duration-300 hover:scale-105 hover:shadow-xl">
+                <div class="text-5xl mb-4 text-blue-700" role="img" aria-label="Persona meditando">🧘‍♀️</div>
+                <h2 class="text-2xl font-bold text-gray-800 mb-3">Masajes en Nuestro Espacio</h2>
+                <p class="text-gray-700 leading-relaxed text-center mb-4">
+                    Disfruta de una experiencia de relajación total en un ambiente sereno y especialmente diseñado para tu confort. Desconéctate del mundo exterior y déjate llevar por nuestras manos expertas.
+                </p>
+                <div class="text-left w-full mt-auto">
+                    <h4 class="text-lg font-semibold text-gray-800 mb-1">Ubicación:</h4>
+                    <p class="text-gray-700 text-sm mb-3">Sabanilla de Alajuela, Costa Rica</p>
+                    <h4 class="text-lg font-semibold text-gray-800 mb-1">Horarios:</h4>
+                    <p class="text-gray-700 text-sm">Lunes a Viernes: 8:00 AM - 7:00 PM</p>
+                    <p class="text-gray-700 text-sm">Sábados: 9:00 AM - 1:00 PM</p>
+                </div>
+            </div>
+            <!-- Sección de servicios a domicilio -->
+            <div class="bg-gradient-soft-green p-6 rounded-lg shadow-lg flex flex-col items-center transform transition duration-300 hover:scale-105 hover:shadow-xl">
+                <div class="text-5xl mb-4 text-teal-700" role="img" aria-label="Casa">🏡</div>
+                <h2 class="text-2xl font-bold text-gray-800 mb-3">Servicio de Masajes a Domicilio</h2>
+                <p class="text-gray-700 leading-relaxed text-center mb-4">
+                    Llevamos la experiencia de Relax Natural Zen directamente a tu puerta. Disfruta de un masaje profesional sin salir de la comodidad de tu casa.
+                </p>
+                <div class="text-left w-full mt-auto">
+                    <h4 class="text-lg font-semibold text-gray-800 mb-1">Cobertura:</h4>
+                    <p class="text-gray-700 text-sm mb-3">Toda la Zona Metropolitana de Costa Rica.</p>
+                    <h4 class="text-lg font-semibold text-gray-800 mb-1">Costo Adicional:</h4>
+                    <p class="text-gray-700 text-sm">Se aplica un costo adicional por desplazamiento, el cual varía según la zona. Por favor, contáctanos para una cotificación personalizada.</p>
+                </div>
+            </div>
+        </div>
+        <!-- Botón de WhatsApp en medio de la página -->
+        <div class="mb-10">
+            <a href="https://wa.me/50686921010" target="_blank" class="inline-block bg-green-500 text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-green-600 transition duration-300 transform hover:scale-105 shadow-md btn-hover-effect btn-green-pulse">
+                <i class="fab fa-whatsapp mr-2" aria-hidden="true"></i> Contáctanos por WhatsApp
+            </a>
+        </div>
+        <!-- Sección de imágenes de servicios -->
+        <h2 id="servicios" class="text-3xl md:text-4xl font-bold text-gray-800 mb-8">Nuestros Servicios de Masajes</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-12">
+            <!-- Servicio de Masaje Relajante -->
+            <div class="bg-gray-50 p-4 rounded-lg shadow-md flex flex-col items-center text-center">
+                <h3 class="text-xl font-semibold text-gray-800 mb-3">Masaje Relajante</h3>
+                <img
+                    src="https://i.ibb.co/0pJX4j4d/relajante.png"
+                    alt="Persona recibiendo un masaje relajante en la espalda, en un ambiente tranquilo."
+                    class="w-full h-48 rounded-md object-cover mb-3 shadow-md"
+                    onerror="this.onerror=null; this.src='https://placehold.co/600x400/CCCCCC/000000?text=Error+Cargando+Imagen';"
+                >
+                <p class="text-gray-700 text-sm mb-2 short-description">
+                    Sumérgete en una profunda relajación con este masaje suave y envolvente. Alivia el estrés, calma la mente y relaja los músculos, proporcionando una sensación de paz y bienestar.
+                </p>
+                <p class="text-lg font-bold text-teal-600 mt-auto">₡20.000 en adelante</p>
+                <!-- Expanded content area -->
+                <div class="expanded-content hidden mt-4 text-left">
+                    <p class="text-gray-700 text-sm">
+                        Este masaje utiliza movimientos fluidos y suaves, con presión ligera a media, diseñada para inducir un estado de profunda relajación. Se enfoca en liberar la tensión superficial y calmar el sistema nervioso. Sus ventajas incluyen la reducción del estrés y la ansiedad, mejora de la circulación sanguínea, alivio de dolores de cabeza tensionales, y promoción de un sueño más reparador. Es ideal para quienes buscan desconectar y revitalizar su energía.
+                    </p>
+                </div>
+                <button class="expand-btn mt-4 bg-teal-500 text-white font-bold py-2 px-4 rounded-full text-sm hover:bg-teal-600 transition duration-300 transform hover:scale-105 shadow-md btn-hover-effect">
+                    Expandir
+                </button>
+            </div>
+            <!-- Servicio de Masaje Terapéutico y Descontracturante -->
+            <div class="bg-gray-50 p-4 rounded-lg shadow-md flex flex-col items-center text-center">
+                <h3 class="text-xl font-semibold text-gray-800 mb-3">Masaje Terapéutico y Descontracturante</h3>
+                <img
+                    src="https://i.ibb.co/KzzZnPw9/terap-utico-y-descontracturante.png"
+                    alt="Manos aplicando presión profunda en la espalda de una persona, ilustrando un masaje descontracturante."
+                    class="w-full h-48 rounded-md object-cover mb-3 shadow-md"
+                    onerror="this.onerror=null; this.src='https://placehold.co/600x400/CCCCCC/000000?text=Error+Cargando+Imagen';"
+                >
+                <p class="text-gray-700 text-sm mb-2 short-description">
+                    Alivia tensiones musculares profundas y nudos. Este masaje terapéutico se enfoca en descontracturar zonas específicas, restaurando la movilidad y reduciendo el dolor.
+                </p>
+                <p class="text-lg font-bold text-teal-600 mt-auto">₡35.000 en adelante</p>
+                <!-- Expanded content area -->
+                <div class="expanded-content hidden mt-4 text-left">
+                    <p class="text-gray-700 text-sm">
+                        Diseñado para tratar dolores musculares crónicos y tensiones específicas, este masaje aplica técnicas de presión profunda, fricción y estiramientos en áreas problemáticas. Sus características incluyen el trabajo sobre contracturas y puntos gatillo para liberar el músculo de la tensión acumulada. Las ventajas son una notable disminución del dolor, mejora de la flexibilidad muscular, aumento del rango de movimiento y recuperación acelerada de lesiones musculares. Es perfecto para aliviar molestias causadas por el estrés, malas posturas o actividad física intensa.
+                    </p>
+                </div>
+                <button class="expand-btn mt-4 bg-teal-500 text-white font-bold py-2 px-4 rounded-full text-sm hover:bg-teal-600 transition duration-300 transform hover:scale-105 shadow-md btn-hover-effect">
+                    Expandir
+                </button>
+            </div>
+            <!-- Servicio de Masaje con Piedras Calientes -->
+            <div class="bg-gray-50 p-4 rounded-lg shadow-md flex flex-col items-center text-center">
+                <h3 class="text-xl font-semibold text-gray-800 mb-3">Masaje con Piedras Calientes</h3>
+                <img
+                    src="https://i.ibb.co/tTkgyFJy/piedras-calientes.png"
+                    alt="Piedras calientes colocadas sobre la espalda de una persona, con un fondo suave y relajante."
+                    class="w-full h-48 rounded-md object-cover mb-3 shadow-md"
+                    onerror="this.onerror=null; this.src='https://placehold.co/600x400/CCCCCC/000000?text=Error+Cargando+Imagen';"
+                >
+                <p class="text-gray-700 text-sm mb-2 short-description">
+                    Experimenta una relajación profunda y alivio muscular con el calor terapéutico de las piedras volcánicas, que envuelven tu cuerpo en una sensación de calma total.
+                </p>
+                <p class="text-lg font-bold text-teal-600 mt-auto">₡30.000 en adelante</p>
+                <!-- Expanded content area -->
+                <div class="expanded-content hidden mt-4 text-left">
+                    <p class="text-gray-700 text-sm">
+                        Esta terapia milenaria utiliza piedras lisas de basalto calentadas, colocadas estratégicamente en puntos energéticos del cuerpo y usadas para masajear. El calor de las piedras penetra profundamente en los músculos, relajando y descontracturando. Entre sus ventajas se encuentran la profunda relajación muscular, alivio de la tensión y el dolor, mejora de la circulación, desintoxicación del cuerpo y una sensación de bienestar y armonía general. Es ideal para liberar el estrés y revitalizar el espíritu.
+                    </p>
+                </div>
+                <button class="expand-btn mt-4 bg-teal-500 text-white font-bold py-2 px-4 rounded-full text-sm hover:bg-teal-600 transition duration-300 transform hover:scale-105 shadow-md btn-hover-effect">
+                    Expandir
+                </button>
+            </div>
+            <!-- Servicio de Masaje Deportivo -->
+            <div class="bg-gray-50 p-4 rounded-lg shadow-md flex flex-col items-center text-center">
+                <h3 class="text-xl font-semibold text-gray-800 mb-3">Masaje Deportivo</h3>
+                <img
+                    src="https://i.ibb.co/RKpmBpt/deportivo.png"
+                    alt="Piernas de un atleta siendo masajeado intensamente, con enfoque en la recuperación muscular."
+                    class="w-full h-48 rounded-md object-cover mb-3 shadow-md"
+                    onerror="this.onerror=null; this.src='https://placehold.co/600x400/CCCCCC/000000?text=Error+Cargando+Imagen';"
+                >
+                <p class="text-gray-700 text-sm mb-2 short-description">
+                    Preparación y recuperación muscular para atletas. Ayuda a prevenir lesiones y optimizar el rendimiento, acelerando la recuperación post-entrenamiento.
+                </p>
+                <p class="text-lg font-bold text-teal-600 mt-auto">₡35.000 en adelante</p>
+                <!-- Expanded content area -->
+                <div class="expanded-content hidden mt-4 text-left">
+                    <p class="text-gray-700 text-sm">
+                        Enfocado en las necesidades de los deportistas, este masaje utiliza técnicas más intensas y específicas para trabajar sobre los músculos involucrados en la actividad física. Sus características incluyen el estiramiento, compresión y fricción profunda. Las ventajas son la reducción del riesgo de lesiones, mejora de la flexibilidad, aceleración de la recuperación muscular después del ejercicio intenso, alivio de dolores musculares y mejora del rendimiento atlético general. Es un complemento esencial para cualquier rutina de entrenamiento.
+                    </p>
+                </div>
+                <button class="expand-btn mt-4 bg-teal-500 text-white font-bold py-2 px-4 rounded-full text-sm hover:bg-teal-600 transition duration-300 transform hover:scale-105 shadow-md btn-hover-effect">
+                    Expandir
+                </button>
+            </div>
+            <!-- Servicio de Desintoxicación Iónica -->
+            <div class="bg-gray-50 p-4 rounded-lg shadow-md flex flex-col items-center text-center">
+                <h3 class="text-xl font-semibold text-gray-800 mb-3">Desintoxicación Iónica</h3>
+                <img
+                    src="https://i.ibb.co/5wXRsnY/desintoxicaci-n-i-nica.png"
+                    alt="Pies sumergidos en un recipiente con agua y un dispositivo de desintoxicación iónica, mostrando burbujas."
+                    class="w-full h-48 rounded-md object-cover mb-3 shadow-md"
+                    onerror="this.onerror=null; this.src='https://placehold.co/600x400/CCCCCC/000000?text=Error+Cargando+Imagen';"
+                >
+                <p class="text-gray-700 text-sm mb-2 short-description">
+                    Ayuda a eliminar toxinas del cuerpo de manera efectiva. Promueve un mayor equilibrio, energía y bienestar general a través de un proceso natural.
+                </p>
+                <p class="text-lg font-bold text-teal-600 mt-auto">₡25.000 en adelante</p>
+                <!-- Expanded content area -->
+                <div class="expanded-content hidden mt-4 text-left">
+                    <p class="text-gray-700 text-sm">
+                        La desintoxicación iónica es un proceso que utiliza un dispositivo especial para crear un campo de iones en el agua, a través del cual los pies se sumergen. Se cree que los iones negativos son absorbidos por el cuerpo, atrayendo y neutralizando las toxinas. Sus ventajas incluyen la purificación del cuerpo, aumento de los niveles de energía, mejora de la circulación, reducción de la hinchazón y apoyo a la función hepática y renal, contribuyendo a una sensación de limpieza y vitalidad renovada.
+                    </p>
+                </div>
+                <button class="expand-btn mt-4 bg-teal-500 text-white font-bold py-2 px-4 rounded-full text-sm hover:bg-teal-600 transition duration-300 transform hover:scale-105 shadow-md btn-hover-effect">
+                    Expandir
+                </button>
+            </div>
+            <!-- Servicio de Drenaje Linfático -->
+            <div class="bg-gray-50 p-4 rounded-lg shadow-md flex flex-col items-center text-center">
+                <h3 class="text-xl font-semibold text-gray-800 mb-3">Drenaje Linfático</h3>
+                <img
+                    src="https://i.ibb.co/cSff8mgb/drenaje-linf-tico.png"
+                    alt="Manos realizando un masaje suave en la pierna, enfocándose en el drenaje linfático."
+                    class="w-full h-48 rounded-md object-cover mb-3 shadow-md"
+                    onerror="this.onerror=null; this.src='https://placehold.co/600x400/CCCCCC/000000?text=Error+Cargando+Imagen';"
+                >
+                <p class="text-gray-700 text-sm mb-2 short-description">
+                    Masaje suave que estimula el sistema linfático. Ideal para reducir la hinchazón, mejorar la circulación y promover la eliminación natural de líquidos.
+                </p>
+                <p class="text-lg font-bold text-teal-600 mt-auto">₡30.000 en adelante</p>
+                <!-- Expanded content area -->
+                <div class="expanded-content hidden mt-4 text-left">
+                    <p class="text-gray-700 text-sm">
+                        Es una técnica de masaje manual suave que se aplica sobre la piel con movimientos lentos, rítmicos y muy superficiales. Su objetivo es estimular el flujo de la linfa, una sustancia que transporta toxinas y desechos. Sus características incluyen la activación del sistema linfático para desinflamar. Las ventajas son la reducción de la retención de líquidos, eliminación de toxinas, fortalecimiento del sistema inmune, mejora de la circulación, y es excelente para el postoperatorio o para aliviar piernas cansadas e hinchadas.
+                    </p>
+                </div>
+                <button class="expand-btn mt-4 bg-teal-500 text-white font-bold py-2 px-4 rounded-full text-sm hover:bg-teal-600 transition duration-300 transform hover:scale-105 shadow-md btn-hover-effect">
+                    Expandir
+                </button>
+            </div>
+            <!-- Servicio de Masaje Facial y Limpieza Facial -->
+            <div class="bg-gray-50 p-4 rounded-lg shadow-md flex flex-col items-center text-center">
+                <h3 class="text-xl font-semibold text-gray-800 mb-3">Masaje Facial y Limpieza Facial</h3>
+                <img
+                    src="https://i.ibb.co/xtxhLM8n/limpieza-y-masaje-facial.png"
+                    alt="Rostro de una persona recibiendo un masaje facial, con toallas calientes y productos de spa."
+                    class="w-full h-48 rounded-md object-cover mb-3 shadow-md"
+                    onerror="this.onerror=null; this.src='https://placehold.co/600x400/CCCCCC/000000?text=Error+Cargando+Imagen';"
+                >
+                <p class="text-gray-700 text-sm mb-2 short-description">
+                    Combina una limpieza profunda con un masaje relajante. Rejuvenece tu piel, reduce la tensión facial y te deja con un cutis radiante y fresco.
+                </p>
+                <p class="text-lg font-bold text-teal-600 mt-auto">₡25.000 en adelante</p>
+                <!-- Expanded content area -->
+                <div class="expanded-content hidden mt-4 text-left">
+                    <p class="text-gray-700 text-sm">
+                        Este servicio integral comienza con una limpieza profunda para eliminar impurezas, seguida de una exfoliación y, si es necesario, una extracción suave. Luego, se aplica un masaje facial relajante que estimula la circulación y relaja los músculos del rostro. Las ventajas son una piel más limpia, hidratada y luminosa, reducción de líneas de expresión por tensión, mejora del tono y elasticidad de la piel, y una profunda sensación de relajación facial. Es un tratamiento ideal para revitalizar el rostro y desconectar.
+                    </p>
+                </div>
+                <button class="expand-btn mt-4 bg-teal-500 text-white font-bold py-2 px-4 rounded-full text-sm hover:bg-teal-600 transition duration-300 transform hover:scale-105 shadow-md btn-hover-effect">
+                    Expandir
+                </button>
+            </div>
+            <!-- Servicio de Maderoterapia -->
+            <div class="bg-gray-50 p-4 rounded-lg shadow-md flex flex-col items-center text-center">
+                <h3 class="text-xl font-semibold text-gray-800 mb-3">Maderoterapia</h3>
+                <img
+                    src="https://i.ibb.co/8nyPJCzQ/maderoterapia.png"
+                    alt="Instrumentos de madera de maderoterapia sobre una superficie, listos para su uso."
+                    class="w-full h-48 rounded-md object-cover mb-3 shadow-md"
+                    onerror="this.onerror=null; this.src='https://placehold.co/600x400/CCCCCC/000000?text=Error+Cargando+Imagen';"
+                >
+                <p class="text-gray-700 text-sm mb-2 short-description">
+                    Técnica ancestral con instrumentos de madera. Moldea la figura, reduce la celulitis, y alivia tensiones, todo de forma natural y efectiva.
+                </p>
+                <p class="text-lg font-bold text-teal-600 mt-auto">₡35.000 en adelante</p>
+                <!-- Expanded content area -->
+                <div class="expanded-content hidden mt-4 text-left">
+                    <p class="text-gray-700 text-sm">
+                        Originaria de culturas orientales, la maderoterapia es una técnica de masaje que utiliza instrumentos de madera diseñados anatómicamente para esculpir el cuerpo, tonificar la piel y reducir la celulitis. Sus ventajas incluyen la activación de la circulación, la eliminación de toxinas, la reducción de medidas, la mejora de la apariencia de la piel, y un efecto relajante profundo, ideal para quienes buscan resultados estéticos y bienestar.
+                    </p>
+                </div>
+                <button class="expand-btn mt-4 bg-teal-500 text-white font-bold py-2 px-4 rounded-full text-sm hover:bg-teal-600 transition duration-300 transform hover:scale-105 shadow-md btn-hover-effect">
+                    Expandir
+                </button>
+            </div>
+            <!-- Servicio de Masaje Prenatal -->
+            <div class="bg-gray-50 p-4 rounded-lg shadow-md flex flex-col items-center text-center">
+                <h3 class="text-xl font-semibold text-gray-800 mb-3">Masaje Prenatal</h3>
+                <img
+                    src="https://i.ibb.co/WWF5JpxR/prenatal.png"
+                    alt="Mujer embarazada recibiendo un masaje suave en la espalda, adaptado para su comodidad."
+                    class="w-full h-48 rounded-md object-cover mb-3 shadow-md"
+                    onerror="this.onerror=null; this.src='https://placehold.co/600x400/CCCCCC/000000?text=Error+Cargando+Imagen';"
+                >
+                <p class="text-gray-700 text-sm mb-2 short-description">
+                    Diseñado para futuras mamás, alivia las molestias del embarazo y promueve la relajación y el bienestar tanto para la madre como para el bebé.
+                </p>
+                <p class="text-lg font-bold text-teal-600 mt-auto">₡30.000 en adelante</p>
+                <!-- Expanded content area -->
+                <div class="expanded-content hidden mt-4 text-left">
+                    <p class="text-gray-700 text-sm">
+                        Este masaje se adapta a las necesidades específicas de las mujeres embarazadas, utilizando técnicas suaves y posturas seguras para aliviar las tensiones comunes durante la gestación. Sus características incluyen el alivio del dolor de espalda, piernas y pies, reducción de la hinchazón, mejora del sueño, y un espacio para la relajación y conexión con el bebé. Es una forma segura y efectiva de cuidar el cuerpo y la mente durante el embarazo.
+                    </p>
+                </div>
+                <button class="expand-btn mt-4 bg-teal-500 text-white font-bold py-2 px-4 rounded-full text-sm hover:bg-teal-600 transition duration-300 transform hover:scale-105 shadow-md btn-hover-effect">
+                    Expandir
+                </button>
+            </div>
+            <!-- Servicio de Masaje Reductivo y Reafirmante -->
+            <div class="bg-gray-50 p-4 rounded-lg shadow-md flex flex-col items-center text-center">
+                <h3 class="text-xl font-semibold text-gray-800 mb-3">Masaje Reductivo y Reafirmante</h3>
+                <img
+                    src="https://i.ibb.co/fzSjcb3k/reductivo-y-reafirmante.png"
+                    alt="Abdomen siendo masajeado vigorosamente para reducir medidas y reafirmar la piel."
+                    class="w-full h-48 rounded-md object-cover mb-3 shadow-md"
+                    onerror="this.onerror=null; this.src='https://placehold.co/600x400/CCCCCC/000000?text=Error+Cargando+Imagen';"
+                >
+                <p class="text-gray-700 text-sm mb-2 short-description">
+                    Moldea tu cuerpo, reduce medidas y mejora la firmeza de la piel. Ideal para complementar tratamientos estéticos y lograr una silueta más definida.
+                </p>
+                <p class="text-lg font-bold text-teal-600 mt-auto">₡35.000 en adelante</p>
+                <!-- Expanded content area -->
+                <div class="expanded-content hidden mt-4 text-left">
+                    <p class="text-gray-700 text-sm">
+                        Este masaje intensivo utiliza técnicas de fricción profunda, amasamiento y golpeteo para movilizar la grasa localizada, estimular la circulación y mejorar el drenaje linfático. Sus características incluyen la aplicación de cremas y geles con principios activos. Las ventajas son la reducción de centímetros en áreas específicas, mejora de la elasticidad y tono de la piel, disminución de la celulitis, y una silueta más definida. Es un aliado perfecto en tu camino hacia un cuerpo más esculpido y firme.
+                    </p>
+                </div>
+                <button class="expand-btn mt-4 bg-teal-500 text-white font-bold py-2 px-4 rounded-full text-sm hover:bg-teal-600 transition duration-300 transform hover:scale-105 shadow-md btn-hover-effect">
+                    Expandir
+                </button>
+            </div>
+            <!-- Servicio de Reflexología Podal -->
+            <div class="bg-gray-50 p-4 rounded-lg shadow-md flex flex-col items-center text-center">
+                <h3 class="text-xl font-semibold text-gray-800 mb-3">Reflexología Podal</h3>
+                <img
+                    src="https://i.ibb.co/JR432hKG/reflexolog-a-podal.png"
+                    alt="Pies recibiendo un masaje en puntos específicos, con un diagrama de reflexología de fondo."
+                    class="w-full h-48 rounded-md object-cover mb-3 shadow-md"
+                    onerror="this.onerror=null; this.src='https://placehold.co/600x400/CCCCCC/000000?text=Error+Cargando+Imagen';"
+                >
+                <p class="text-gray-700 text-sm mb-2 short-description">
+                    Masaje en puntos específicos de los pies. Alivia el estrés, mejora la energía y promueve el bienestar de todo el cuerpo.
+                </p>
+                <p class="text-lg font-bold text-teal-600 mt-auto">₡20.000 en adelante</p>
+                <!-- Expanded content area -->
+                <div class="expanded-content hidden mt-4 text-left">
+                    <p class="text-gray-700 text-sm">
+                        Basada en la premisa de que existen puntos reflejos en los pies conectados con órganos y sistemas del cuerpo, la reflexología podal aplica presión en estas áreas para restaurar el equilibrio y promover la curación. Sus ventajas incluyen la reducción del estrés y la tensión, mejora de la circulación, alivio del dolor, estimulación de la energía vital, y un profundo estado de relajación para todo el cuerpo. Es una terapia holística para revitalizar de pies a cabeza.
+                    </p>
+                </div>
+                <button class="expand-btn mt-4 bg-teal-500 text-white font-bold py-2 px-4 rounded-full text-sm hover:bg-teal-600 transition duration-300 transform hover:scale-105 shadow-md btn-hover-effect">
+                    Expandir
+                </button>
+            </div>
+            <!-- Servicio de Masaje con Ventosas -->
+            <div class="bg-gray-50 p-4 rounded-lg shadow-md flex flex-col items-center text-center">
+                <h3 class="text-xl font-semibold text-gray-800 mb-3">Masaje con Ventosas</h3>
+                <img
+                    src="https://i.ibb.co/hwbmVG1/ventosas-masaje.png"
+                    alt="Copas de ventosas aplicadas en la espalda de una persona, mostrando un efecto de succión."
+                    class="w-full h-48 rounded-md object-cover mb-3 shadow-md"
+                    onerror="this.onerror=null; this.src='https://placehold.co/600x400/CCCCCC/000000?text=Error+Cargando+Imagen';"
+                >
+                <p class="text-gray-700 text-sm mb-2 short-description">
+                    Técnica que utiliza copas para crear succión. Ideal para aliviar el dolor muscular, mejorar la circulación y liberar la tensión profunda.
+                </p>
+                <p class="text-lg font-bold text-teal-600 mt-auto">₡30.000 en adelante</p>
+                <!-- Expanded content area -->
+                <div class="expanded-content hidden mt-4 text-left">
+                    <p class="text-gray-700 text-sm">
+                        La terapia con ventosas es una técnica antigua que utiliza copas de vidrio o plástico para crear succión en la piel, movilizando el flujo sanguíneo y energético. Sus ventajas incluyen el alivio del dolor muscular y de espalda, reducción de la inflamación, mejora de la circulación, desintoxicación del cuerpo, y liberación de la tensión muscular profunda. Es efectiva para tratar dolores crónicos y rigidez, proporcionando una sensación de ligereza y bienestar.
+                    </p>
+                </div>
+                <button class="expand-btn mt-4 bg-teal-500 text-white font-bold py-2 px-4 rounded-full text-sm hover:bg-teal-600 transition duration-300 transform hover:scale-105 shadow-md btn-hover-effect">
+                    Expandir
+                </button>
+            </div>
+        </div>
+        <!-- Sección de Paquetes de Masaje -->
+        <h2 id="paquetes" class="text-3xl md:text-4xl font-bold text-gray-800 mb-8">Nuestros Paquetes de Masajes</h2>
+        <p class="text-lg text-gray-700 mb-8">
+            Diseñamos estos paquetes para ofrecerte una experiencia completa y un bienestar duradero.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            <!-- Paquete Básico -->
+            <div class="bg-gradient-soft-blue p-6 rounded-lg shadow-lg border-b-4 border-blue-500 transform transition duration-300 hover:scale-105 hover:shadow-xl">
+                <h3 class="text-2xl font-bold text-blue-800 mb-4">Paquete Básico</h3>
+                <p class="text-gray-700 mb-4">
+                    Ideal para comenzar tu camino hacia la relajación.
+                </p>
+                <ul class="text-gray-700 text-left space-y-2 mb-6">
+                    <li class="flex items-center"><i class="fas fa-check-circle text-blue-600 mr-2"></i> 2 Sesiones de Masaje Relajante</li>
+                    <li class="flex items-center"><i class="fas fa-check-circle text-blue-600 mr-2"></i> 1 Sesión de Desintoxicación Iónica</li>
+                </ul>
+                <p class="text-3xl font-bold text-blue-700 mb-4">₡55.000</p>
+                <a href="https://wa.me/50686921010" target="_blank" class="inline-block bg-blue-600 text-white font-bold py-3 px-6 rounded-full text-lg hover:bg-blue-700 transition duration-300 transform hover:scale-105 shadow-md btn-hover-effect">
+                    <i class="fab fa-whatsapp mr-2"></i> Adquirir Paquete
+                </a>
+            </div>
+            <!-- Paquete Premium -->
+            <div class="bg-gradient-soft-purple p-6 rounded-lg shadow-lg border-b-4 border-purple-500 transform transition duration-300 hover:scale-105 hover:shadow-xl">
+                <h3 class="text-2xl font-bold text-purple-800 mb-4">Paquete Premium</h3>
+                <p class="text-gray-700 mb-4">
+                    La experiencia completa de bienestar y transformación.
+                </p>
+                <ul class="text-gray-700 text-left space-y-2 mb-6">
+                    <li class="flex items-center"><i class="fas fa-check-circle text-purple-600 mr-2"></i> 3 Sesiones a elección (cualquier masaje)</li>
+                    <li class="flex items-center"><i class="fas fa-check-circle text-purple-600 mr-2"></i> 2 Sesiones de Desintoxicación Iónica</li>
+                    <li class="flex items-center"><i class="fas fa-check-circle text-purple-600 mr-2"></i> 1 Sesión de Limpieza Facial Profunda</li>
+                </ul>
+                <p class="text-3xl font-bold text-purple-700 mb-4">₡120.000</p>
+                <a href="https://wa.me/50686921010" target="_blank" class="inline-block bg-purple-600 text-white font-bold py-3 px-6 rounded-full text-lg hover:bg-purple-700 transition duration-300 transform hover:scale-105 shadow-md btn-hover-effect">
+                    <i class="fab fa-whatsapp mr-2"></i> Adquirir Paquete
+                </a>
+            </div>
+        </div>
+        <!-- Sección sobre el Terapeuta -->
+        <h2 id="terapeuta" class="text-3xl md:text-4xl font-bold text-gray-800 mb-8">Conoce a tu Terapeuta</h2>
+        <div class="bg-gray-100 p-6 rounded-lg shadow-lg flex flex-col md:flex-row items-center md:items-start gap-6 mb-12">
+            <img src="https://i.ibb.co/hZ27D4g/terapeuta-relax-natural-zen.png" alt="Retrato de la terapeuta de Relax Natural Zen sonriendo y vestida profesionalmente." class="w-48 h-48 rounded-full object-cover shadow-md mb-4 md:mb-0 md:mr-6">
+            <div class="text-center md:text-left">
+                <h3 class="text-2xl font-bold text-gray-800 mb-2">Katherine Solís Gamboa</h3>
+                <p class="text-teal-600 font-semibold mb-3">Especialista en Masajes Terapéuticos y Estéticos</p>
+                <p class="text-gray-700 leading-relaxed">
+                    "Hola, soy Katherine, la mente y el corazón detrás de Relax Natural Zen. Mi pasión es el bienestar integral y mi misión es brindarte un oasis de calma y sanación a través de masajes profesionales. Con años de experiencia y una formación continua en diversas técnicas terapéuticas y estéticas, me dedico a personalizar cada sesión para satisfacer tus necesidades únicas, ayudándote a liberar el estrés, aliviar dolores y renovar tu energía. ¡Espero verte pronto para que juntos iniciemos tu camino hacia un equilibrio perfecto!"
+                </p>
+            </div>
+        </div>
+        <!-- Sección de Métodos de Pago -->
+        <h2 id="pagos" class="text-3xl md:text-4xl font-bold text-gray-800 mb-8">Métodos de Pago</h2>
+        <div class="bg-gradient-soft-orange p-6 rounded-lg shadow-lg mb-12 border-b-4 border-orange-500">
+            <p class="text-lg text-gray-700 mb-6">
+                Para tu comodidad, aceptamos los siguientes métodos de pago:
+            </p>
+            <div class="flex flex-wrap justify-center items-center gap-6 text-4xl text-gray-700">
+                <div class="flex flex-col items-center">
+                    <i class="fas fa-money-bill-wave text-green-700 mb-2"></i>
+                    <span class="text-base font-semibold">Efectivo</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <i class="fas fa-exchange-alt text-blue-700 mb-2"></i>
+                    <span class="text-base font-semibold">Transferencia SINPE</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <i class="fab fa-cc-visa text-indigo-700 mb-2"></i>
+                    <span class="text-base font-semibold">Visa</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <i class="fab fa-cc-mastercard text-red-700 mb-2"></i>
+                    <span class="text-base font-semibold">Mastercard</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <i class="fab fa-paypal text-blue-800 mb-2"></i>
+                    <span class="text-base font-semibold">PayPal</span>
+                </div>
+            </div>
+            <p class="text-sm text-gray-600 mt-6">
+                Para pagos con tarjeta, por favor, notifícanos con antelación.
+            </p>
+        </div>
+        <!-- Sección de Política de Cancelación y Reembolso -->
+        <h2 id="politica" class="text-3xl md:text-4xl font-bold text-gray-800 mb-8">Política de Cancelación y Reembolso</h2>
+        <div class="bg-gray-100 p-6 rounded-lg shadow-lg mb-12">
+            <p class="text-gray-700 mb-4">
+                Entendemos que pueden surgir imprevistos. Para asegurar la mejor atención a todos nuestros clientes y el buen funcionamiento de nuestras operaciones, te pedimos que consideres lo siguiente:
+            </p>
+            <ul class="list-disc list-inside text-gray-700 space-y-2 mb-4">
+                <li>Las cancelaciones o cambios de citas deben notificarse con al menos **24 horas de antelación**.</li>
+                <li>Las citas canceladas con menos de 24 horas de antelación o las ausencias sin previo aviso pueden incurrir en un cargo del **50% del costo del servicio**.</li>
+                <li>Los reembolsos se procesarán en un plazo de **5 a 7 días hábiles** tras la aprobación.</li>
+            </ul>
+            <p class="text-gray-700">
+                Agradecemos tu comprensión y cooperación.
+            </p>
+        </div>
+        <!-- Sección de Preguntas Frecuentes (FAQ) -->
+        <h2 id="faq" class="text-3xl md:text-4xl font-bold text-gray-800 mb-8">Preguntas Frecuentes</h2>
+        <div class="w-full max-w-3xl mx-auto">
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    ¿Cuáles son los beneficios de los masajes?
+                    <i class="fas fa-chevron-down accordion-icon"></i>
+                </div>
+                <div class="accordion-content">
+                    <p class="text-gray-700 p-4">
+                        Los masajes ofrecen una multitud de beneficios, incluyendo la reducción del estrés y la ansiedad, alivio del dolor muscular y la tensión, mejora de la circulación sanguínea y linfática, promoción de un sueño más reparador, y un aumento general de la sensación de bienestar y relajación. También pueden ayudar en la recuperación de lesiones y mejorar la flexibilidad.
+                    </p>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    ¿Ofrecen masajes a domicilio en todo Costa Rica?
+                    <i class="fas fa-chevron-down accordion-icon"></i>
+                </div>
+                <div class="accordion-content">
+                    <p class="text-gray-700 p-4">
+                        Actualmente, ofrecemos nuestro servicio de masajes a domicilio en toda la Gran Área Metropolitana (GAM) de Costa Rica. Para citas fuera de esta zona, por favor, contáctanos directamente para evaluar la posibilidad y el costo adicional de desplazamiento.
+                    </p>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    ¿Qué medidas de higiene y seguridad implementan?
+                    <i class="fas fa-chevron-down accordion-icon"></i>
+                </div>
+                <div class="accordion-content">
+                    <p class="text-gray-700 p-4">
+                        En Relax Natural Zen, tu salud y seguridad son nuestra máxima prioridad. Implementamos estrictas medidas de higiene, incluyendo la desinfección profunda de todo el equipo antes y después de cada sesión, uso de toallas limpias y productos de un solo uso cuando sea posible, y el uso de mascarilla por parte de nuestra terapeuta si es necesario.
+                    </p>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    ¿Necesito llevar algo a mi cita?
+                    <i class="fas fa-chevron-down accordion-icon"></i>
+                </div>
+                <div class="accordion-content">
+                    <p class="text-gray-700 p-4">
+                        No necesitas traer nada. Nosotros proporcionamos todo el equipo necesario, incluyendo camilla, toallas limpias, aceites y cualquier implemento específico para tu masaje. Solo ven con ganas de relajarte y disfrutar.
+                    </p>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    ¿Puedo personalizar mi masaje?
+                    <i class="fas fa-chevron-down accordion-icon"></i>
+                </div>
+                <div class="accordion-content">
+                    <p class="text-gray-700 p-4">
+                        ¡Absolutamente! Nuestro objetivo es que tu experiencia sea perfecta. Antes de cada sesión, tu terapeuta conversará contigo para entender tus necesidades y preferencias, y así personalizar el masaje para que obtengas los máximos beneficios.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- Sección de Testimonios/Opiniones -->
+        <h2 id="testimonios" class="text-3xl md:text-4xl font-bold text-gray-800 mb-8 mt-12">Lo Que Dicen Nuestros Clientes</h2>
+        <div class="w-full max-w-3xl mx-auto bg-white p-6 rounded-lg shadow-xl border-l-8 border-teal-500 relative overflow-hidden">
+            <div id="testimonial-display" class="testimonial-fade-in text-center">
+                <!-- Los testimonios se cargarán aquí -->
+            </div>
+            <div class="flex justify-between mt-6">
+                <button id="prev-testimonial" class="bg-teal-500 text-white p-3 rounded-full hover:bg-teal-600 transition duration-300">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button id="next-testimonial" class="bg-teal-500 text-white p-3 rounded-full hover:bg-teal-600 transition duration-300">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Sección de Contacto y Redes Sociales -->
+        <h2 id="contacto" class="text-3xl md:text-4xl font-bold text-gray-800 mb-8 mt-12">Contacto</h2>
+        <div class="bg-gradient-soft-blue p-6 rounded-lg shadow-lg mb-12 border-b-4 border-blue-500">
+            <p class="text-lg text-gray-700 mb-6 text-center">
+                ¿Listo para tu momento de relajación? Contáctanos hoy mismo.
+            </p>
+            <div class="flex flex-wrap justify-center gap-6 mb-6">
+                <a href="https://wa.me/50686921010" target="_blank" class="inline-block bg-green-500 text-white font-bold py-3 px-6 rounded-full text-lg hover:bg-green-600 transition duration-300 transform hover:scale-105 shadow-md btn-hover-effect">
+                    <i class="fab fa-whatsapp mr-2"></i> WhatsApp: 8692-1010
+                </a>
+                <a href="https://www.facebook.com/relaxnaturalzen" target="_blank" class="inline-block bg-blue-600 text-white font-bold py-3 px-6 rounded-full text-lg hover:bg-blue-700 transition duration-300 transform hover:scale-105 shadow-md btn-hover-effect">
+                    <i class="fab fa-facebook-f mr-2"></i> Facebook
+                </a>
+                <a href="mailto:relaxnaturalzen@gmail.com" class="inline-block bg-red-600 text-white font-bold py-3 px-6 rounded-full text-lg hover:bg-red-700 transition duration-300 transform hover:scale-105 shadow-md btn-hover-effect">
+                    <i class="fas fa-envelope mr-2"></i> Email
+                </a>
+            </div>
+            <p class="text-md text-gray-700 text-center">
+                Horario de atención: Lunes a Viernes de 8:00 AM a 7:00 PM, Sábados de 9:00 AM a 1:00 PM.
+            </p>
+        </div>
+    </div>
+    <!-- Botón de WhatsApp flotante -->
+    <a href="https://wa.me/50686921010" target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg text-3xl z-50 hover:bg-green-600 transition duration-300 transform hover:scale-110 btn-hover-effect btn-green-pulse" aria-label="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp" aria-hidden="true"></i>
+    </a>
+    <!-- Botón de Volver Arriba -->
+    <button id="scrollToTopBtn" class="scroll-to-top fixed bottom-6 left-6 bg-teal-500 text-white p-4 rounded-full shadow-lg text-xl z-50 hover:bg-teal-600 transition duration-300 transform hover:scale-110 btn-hover-effect" aria-label="Volver arriba">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    <script>
+        // Data de testimonios
+        const testimonials = [
+            {
+                quote: "¡Una experiencia increíble! Salí renovada y completamente relajada. La terapeuta es súper profesional. ¡Recomendado 100%!",
+                author: "María P."
+            },
+            {
+                quote: "El masaje descontracturante fue justo lo que necesitaba para mi dolor de espalda. Excelente técnica y atención. Gracias, Relax Natural Zen.",
+                author: "Carlos S."
+            },
+            {
+                quote: "Me encantó el servicio a domicilio, muy conveniente y la calidad del masaje fue excepcional. ¡Definitivamente volveré a pedir una cita!",
+                author: "Ana L."
+            },
+            {
+                quote: "Probé el drenaje linfático y noté la diferencia de inmediato. Menos hinchazón y más ligereza. Muy profesional.",
+                author: "Sofía R."
+            },
+            {
+                quote: "La maderoterapia ha sido un cambio total para mí. Estoy viendo resultados increíbles en mi figura y la celulitis. ¡Fan total!",
+                author: "Laura M."
+            }
+        ];
+        let currentTestimonialIndex = 0;
+        const testimonialDisplay = document.getElementById('testimonial-display');
+        const prevTestimonialBtn = document.getElementById('prev-testimonial');
+        const nextTestimonialBtn = document.getElementById('next-testimonial');
+        function displayTestimonial(index) {
+            testimonialDisplay.classList.remove('testimonial-fade-in'); // Reset animation
+            void testimonialDisplay.offsetWidth; // Trigger reflow
+            testimonialDisplay.classList.add('testimonial-fade-in'); // Re-add animation
+            testimonialDisplay.innerHTML = `
+                <p class="text-gray-800 text-lg md:text-xl italic mb-4">"${testimonials[index].quote}"</p>
+                <p class="text-teal-600 font-semibold text-base md:text-lg">- ${testimonials[index].author}</p>
+            `;
+        }
+        prevTestimonialBtn.addEventListener('click', () => {
+            currentTestimonialIndex = (currentTestimonialIndex - 1 + testimonials.length) % testimonials.length;
+            displayTestimonial(currentTestimonialIndex);
+        });
+        nextTestimonialBtn.addEventListener('click', () => {
+            currentTestimonialIndex = (currentTestimonialIndex + 1) % testimonials.length;
+            displayTestimonial(currentTestimonialIndex);
+        });
+        // Mostrar el primer testimonio al cargar
+        displayTestimonial(currentTestimonialIndex);
+        // Desplazamiento suave para los enlaces de navegación
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        // Mostrar/ocultar botón "Volver Arriba"
+        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) { // Muestra el botón después de 300px de scroll
+                scrollToTopBtn.style.display = 'block';
+                setTimeout(() => { // Agrega un pequeño retraso para la transición de opacidad
+                    scrollToTopBtn.style.opacity = '1';
+                }, 10);
+            } else {
+                scrollToTopBtn.style.opacity = '0';
+                setTimeout(() => { // Oculta el botón después de la transición
+                    scrollToTopBtn.style.display = 'none';
+                }, 300); // Coincide con la duración de la transición
+            }
+        });
+        // Lógica para expandir/colapsar descripciones
+        document.querySelectorAll('.expand-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const parentDiv = this.closest('.bg-gray-50');
+                const expandedContent = parentDiv.querySelector('.expanded-content');
+                const shortDescription = parentDiv.querySelector('.short-description');
+                if (expandedContent.classList.contains('hidden')) {
+                    expandedContent.classList.remove('hidden');
+                    shortDescription.classList.add('hidden'); // Hide short description
+                    this.textContent = 'Colapsar';
+                } else {
+                    expandedContent.classList.add('hidden');
+                    shortDescription.classList.remove('hidden'); // Show short description
+                    this.textContent = 'Expandir';
+                }
+            });
+        });
+        // Lógica para el acordeón de Preguntas Frecuentes
+        document.querySelectorAll('.accordion-header').forEach(header => {
+            header.addEventListener('click', function() {
+                const content = this.nextElementSibling;
+                const icon = this.querySelector('.accordion-icon');
+                // Close other open accordions
+                document.querySelectorAll('.accordion-content.open').forEach(openContent => {
+                    if (openContent !== content) {
+                        openContent.classList.remove('open');
+                        openContent.previousElementSibling.classList.remove('active');
+                        openContent.previousElementSibling.querySelector('.accordion-icon').classList.remove('fa-chevron-up');
+                        openContent.previousElementSibling.querySelector('.accordion-icon').classList.add('fa-chevron-down');
+                    }
+                });
+                // Toggle current accordion
+                content.classList.toggle('open');
+                this.classList.toggle('active');
+                icon.classList.toggle('fa-chevron-down');
+                icon.classList.toggle('fa-chevron-up');
+            });
+        });
+    </script>
+</body>
+</html>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Incluye Font Awesome para el ícono de WhatsApp, Facebook y métodos de pago -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Estilos personalizados para la fuente y el fondo */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f9ff; /* Un tono de azul muy suave, casi blanco, para un ambiente relajante */
+            line-height: 1.6; /* Mejora la legibilidad general */
+            color: #333; /* Color de texto base más oscuro para mejor contraste */
+        }
+        /* Estilo para la transición de testimonios */
+        .testimonial-fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        /* Estilo para el botón de volver arriba */
+        .scroll-to-top {
+            display: none; /* Oculto por defecto, se muestra con JS */
+            transition: opacity 0.3s ease-in-out; /* Transición suave para aparecer/desaparecer */
+        }
+        /* Asegura que el contenido no quede oculto bajo la barra de navegación fija */
+        .content-offset {
+            padding-top: 5rem; /* Espacio para la barra de navegación en pantallas pequeñas */
+        }
+        @media (min-width: 768px) {
+            .content-offset {
+                padding-top: 6rem; /* Ajuste para tablets */
+            }
+        }
+        @media (min-width: 1024px) {
+            .content-offset {
+                padding-top: 7rem; /* Ajuste para desktops */
+            }
+        }
+
+        /* Hover effect for buttons to enhance visual feedback and appeal */
+        .btn-hover-effect:hover {
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+            transform: translateY(-2px); /* Slight lift */
+        }
+        .btn-green-pulse:hover {
+            animation: pulse 1s infinite;
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.7); } /* Tailwind green-500 */
+            70% { box-shadow: 0 0 0 10px rgba(52, 211, 153, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0); }
+        }
+
+        /* Ensure readable text on gradient backgrounds */
+        /* Ajuste de colores para gradientes para mayor contraste y sofisticación */
+        .bg-gradient-soft-blue {
+            background-image: linear-gradient(to bottom right, #e0f7fa, #b2ebf2); /* Azul cielo suave */
+        }
+        .bg-gradient-soft-green {
+            background-image: linear-gradient(to bottom right, #e8f5e9, #c8e6c9); /* Verde menta suave */
+        }
+        .bg-gradient-soft-purple {
+            background-image: linear-gradient(to bottom right, #f3e5f5, #e1bee7); /* Morado lavanda suave */
+        }
+        .bg-gradient-soft-orange {
+            background-image: linear-gradient(to bottom right, #fff3e0, #ffe0b2); /* Naranja melocotón suave */
+        }
+
+
+        /* Specific contrast adjustments */
+        .bg-teal-700 .nav-link {
+            color: #ffffff; /* Explicit white for navigation links */
+        }
+        .bg-teal-700 .nav-link:hover {
+            color: #d1fae5; /* Lighter teal for hover */
+        }
+
+        /* Hero Section Styling */
+        .hero-section {
+            position: relative;
+            width: 100%;
+            height: 20rem; /* Responsive height */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        @media (min-width: 768px) {
+            .hero-section {
+                height: 28rem;
+            }
+        }
+        @media (min-width: 1024px) {
+            .hero-section {
+                height: 36rem;
+            }
+        }
+
+        .hero-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            filter: brightness(0.7); /* Oscurece la imagen para que el texto resalte */
+        }
+
+        .hero-overlay-content {
+            position: relative;
+            z-index: 10;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra para mejor legibilidad del texto */
+        }
+
+        /* Animation for the welcome text */
+        .animated-welcome {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: slideInUp 1.5s ease-out forwards;
+            animation-delay: 0.5s; /* Delay the animation slightly */
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* FAQ Accordion Styles */
+        .accordion-item {
+            border-bottom: 1px solid #e2e8f0; /* Tailwind gray-200 */
+        }
+        .accordion-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            cursor: pointer;
+            font-weight: 600;
+            color: #333;
+            transition: color 0.3s ease;
+        }
+        .accordion-header:hover {
+            color: #0d9488; /* Tailwind teal-700 */
+        }
+        .accordion-icon {
+            transition: transform 0.3s ease;
+        }
+        .accordion-header.active .accordion-icon {
+            transform: rotate(180deg);
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            padding-bottom: 0;
+        }
+        .accordion-content.open {
+            max-height: 200px; /* Adjust based on expected content height */
+            padding-bottom: 1rem;
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8 lg:p-12 min-h-screen flex flex-col items-center justify-center">
+
+    <!-- Ancla para el botón "Volver Arriba" -->
+    <div id="top"></div>
+
+    <!-- Barra de Navegación Superior -->
+    <nav class="fixed top-0 left-0 w-full bg-teal-700 text-white p-4 z-50 shadow-lg">
+        <div class="max-w-6xl mx-auto flex flex-wrap justify-center md:justify-around items-center gap-2 sm:gap-4">
+            <a href="#filosofia" class="nav-link hover:bg-teal-600 transition duration-300 text-base md:text-lg font-semibold px-2 py-1 rounded-full">Filosofía</a>
+            <a href="#servicios" class="nav-link hover:bg-teal-600 transition duration-300 text-base md:text-lg font-semibold px-2 py-1 rounded-full">Servicios</a>
+            <a href="#paquetes" class="nav-link hover:bg-teal-600 transition duration-300 text-base md:text-lg font-semibold px-2 py-1 rounded-full">Paquetes</a>
+            <a href="#terapeuta" class="nav-link hover:bg-teal-600 transition duration-300 text-base md:text-lg font-semibold px-2 py-1 rounded-full">Terapeuta</a>
+            <a href="#pagos" class="nav-link hover:bg-teal-600 transition duration-300 text-base md:text-lg font-semibold px-2 py-1 rounded-full">Pagos</a>
+            <a href="#politica" class="nav-link hover:bg-teal-600 transition duration-300 text-base md:text-lg font-semibold px-2 py-1 rounded-full">Política</a>
+            <a href="#faq" class="nav-link hover:bg-teal-600 transition duration-300 text-base md:text-lg font-semibold px-2 py-1 rounded-full">FAQ</a>
+            <a href="#testimonios" class="nav-link hover:bg-teal-600 transition duration-300 text-base md:text-lg font-semibold px-2 py-1 rounded-full">Opiniones</a>
+            <a href="#contacto" class="nav-link hover:bg-teal-600 transition duration-300 text-base md:text-lg font-semibold px-2 py-1 rounded-full">Contacto</a>
+        </div>
+    </nav>
+
+    <!-- Espacio para la barra de navegación fija -->
+    <div class="content-offset w-full"></div>
+
+
+    <!-- Sección de Imagen de Encabezado Principal (Hero Section) -->
+    <div class="w-full max-w-6xl mb-12 rounded-xl overflow-hidden shadow-2xl border-b-8 border-teal-500 hero-section">
+        <img
+            src="https://drive.google.com/uc?id=1-koDK2e8YrgYbBM-24K9YszE_k-PRIbz"
+            alt="Ambiente de spa relajante con toallas, velas y piedras, representando los masajes profesionales de Relax Natural Zen."
+            class="hero-image"
+            onerror="this.onerror=null; this.src='https://placehold.co/1200x400/CCCCCC/000000?text=Error+al+cargar+imagen+principal';"
+        >
+        <div class="hero-overlay-content p-4">
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-4 leading-tight">
+                <span class="text-white">Relax Natural Zen</span>
+            </h1>
+            <p class="text-3xl md:text-4xl lg:text-5xl animated-welcome">
+                Sumérgete en la calma. Tu Bienestar Comienza Aquí.
+            </p>
+        </div>
+    </div>
+
+    <div class="max-w-5xl w-full bg-white rounded-xl shadow-2xl p-6 md:p-10 lg:p-12 text-center border-t-8 border-teal-500">
+        <!-- Encabezado de la página (El h1 anterior ahora está en el hero section) -->
+        <p class="text-xl md:text-2xl text-gray-700 mb-8 leading-relaxed">
+            Tu oasis de bienestar y relajación. Nos encanta lo **natural**, por eso nuestro nombre.
+            Ofrecemos masajes profesionales en la comodidad de tu hogar o en nuestro espacio dedicado.
+        </p>
+
+        <!-- Botón de WhatsApp inicial -->
+        <div class="mb-10">
+            <a href="https://wa.me/50686921010" target="_blank" class="inline-block bg-green-500 text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-green-600 transition duration-300 transform hover:scale-105 shadow-md btn-hover-effect btn-green-pulse">
+                <i class="fab fa-whatsapp mr-2" aria-hidden="true"></i> Contáctanos por WhatsApp
+            </a>
+        </div>
+
+        <!-- Sección de Filosofía y Compromiso -->
+        <div id="filosofia" class="mt-12 p-8 bg-gradient-soft-green rounded-xl shadow-lg border border-green-200">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Nuestra Filosofía y Compromiso</h2>
+            <p class="text-lg text-gray-700 mb-4 text-center">
+                En **Relax Natural Zen**, nos enfocamos en el **bienestar integral** de nuestros pacientes. Sabemos que sentirse bien por dentro y por fuera es fundamental, por eso nuestra pasión es ayudarte a mejorar tu **salud mental y física**.
+            </p>
+            <ul class="text-gray-700 text-left space-y-3 px-4 md:px-8">
+                <li class="flex items-start">
+                    <i class="fas fa-leaf text-green-700 mt-1 mr-3 text-2xl" aria-hidden="true"></i>
+                    <div>
+                        <strong class="text-xl text-gray-800">Enfoque Natural:</strong> Valoramos profundamente lo natural, por eso nuestro nombre refleja este compromiso.
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <i class="fas fa-boxes text-purple-700 mt-1 mr-3 text-2xl" aria-hidden="true"></i>
+                    <div>
+                        <strong class="text-xl text-gray-800">Próximamente Productos 100% Naturales:</strong> Muy pronto tendremos productos para complementar tu bienestar. Para más información, contáctanos por WhatsApp.
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <i class="fas fa-dollar-sign text-blue-700 mt-1 mr-3 text-2xl" aria-hidden="true"></i>
+                    <div>
+                        <strong class="text-xl text-gray-800">Precios Accesibles y Profesionales:</strong> Nos esforzamos por brindar servicios de alta calidad a precios justos, para que el bienestar sea accesible para todos.
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <i class="fas fa-tools text-yellow-700 mt-1 mr-3 text-2xl" aria-hidden="true"></i>
+                    <div>
+                        <strong class="text-xl text-gray-800">Calidad en Cada Sesión:</strong> Combinamos aparatología moderna y técnicas manuales expertas para ofrecer terapias de la más alta calidad y efectividad.
+                    </div>
+                </li>
+            </ul>
+            <p class="text-lg text-gray-700 mt-6 text-center">
+                Tu salud y comodidad son nuestra prioridad.
+            </p>
+        </div>
+
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 mt-12">
+            <!-- Sección de servicios en casa -->
+            <div class="bg-gradient-soft-blue p-6 rounded-lg shadow-lg flex flex-col items-center transform transition duration-300 hover:scale-105 hover:shadow-xl">
+                <div class="text-5xl mb-4 text-blue-700" role="img" aria-label="Persona meditando">🧘‍♀️</div>
+                <h2 class="text-2xl font-bold text-gray-800 mb-3">Masajes en Nuestro Espacio</h2>
+                <p class="text-gray-700 leading-relaxed text-center mb-4">
+                    Disfruta de una experiencia de relajación total en un ambiente sereno y especialmente diseñado para tu confort.
+                    Desconéctate del mundo exterior y déjate llevar por nuestras manos expertas.
+                </p>
+                <div class="text-left w-full mt-auto">
+                    <h4 class="text-lg font-semibold text-gray-800 mb-1">Ubicación:</h4>
+                    <p class="text-gray-700 text-sm mb-3">Sabanilla de Alajuela, Costa Rica</p>
+                    <h4 class="text-lg font-semibold text-gray-800 mb-1">Horarios:</h4>
+                    <p class="text-gray-700 text-sm">Lunes a Viernes: 8:00 AM - 7:00 PM</p>
+                    <p class="text-gray-700 text-sm">Sábados: 9:00 AM - 1:00 PM</p>
+                </div>
+            </div>
+
+            <!-- Sección de servicios a domicilio -->
+            <div class="bg-gradient-soft-green p-6 rounded-lg shadow-lg flex flex-col items-center transform transition duration-300 hover:scale-105 hover:shadow-xl">
+                <div class="text-5xl mb-4 text-teal-700" role="img" aria-label="Casa">🏡</div>
+                <h2 class="text-2xl font-bold text-gray-800 mb-3">Servicio de Masajes a Domicilio</h2>
+                <p class="text-gray-700 leading-relaxed text-center mb-4">
+                    Llevamos la experiencia de Relax Natural Zen directamente a tu puerta.
+                    Disfruta de un masaje profesional sin salir de la comodidad de tu casa.
+                </p>
+                <div class="text-left w-full mt-auto">
+                    <h4 class="text-lg font-semibold text-gray-800 mb-1">Cobertura:</h4>
+                    <p class="text-gray-700 text-sm mb-3">Toda la Zona Metropolitana de Costa Rica.</p>
+                    <h4 class="text-lg font-semibold text-gray-800 mb-1">Costo Adicional:</h4>
+                    <p class="text-gray-700 text-sm">Se aplica un costo adicional por desplazamiento, el cual varía según la zona. Por favor, contáctanos para una cotificación personalizada.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Botón de WhatsApp en medio de la página -->
+        <div class="mb-10">
+            <a href="https://wa.me/50686921010" target="_blank" class="inline-block bg-green-500 text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-green-600 transition duration-300 transform hover:scale-105 shadow-md btn-hover-effect btn-green-pulse">
+                <i class="fab fa-whatsapp mr-2" aria-hidden="true"></i> Contáctanos por WhatsApp
+            </a>
+        </div>
+
+        <!-- Sección de imágenes de servicios -->
+        <h2 id="servicios" class="text-3xl md:text-4xl font-bold text-gray-800 mb-8">Nuestros Servicios de Masajes</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-12">
+
+            <!-- Servicio de Masaje Relajante -->
+            <div class="bg-gray-50 p-4 rounded-lg shadow-md flex flex-col items-center text-center">
+                <h3 class="text-xl font-semibold text-gray-800 mb-3">Masaje Relajante</h3>
+                <img
+                    src="https://drive.google.com/uc?id=1u0ySN9ogk2M6dqCV0py6_yOH41cshpyB"
+                    alt="Persona recibiendo un masaje relajante en la espalda, en un ambiente tranquilo."
+                    class="w-full h-48 rounded-md object-cover mb-3 shadow-md"
+                    onerror="this.onerror=null; this.src='https://placehold.co/600x400/CCCCCC/000000?text=Error+Cargando+Imagen';"
+                >
+                <p class="text-gray-700 text-sm mb-2 short-description">
+                    Sumérgete en una profunda relajación con este masaje suave y envolvente. Alivia el estrés, calma la mente y relaja los músculos, proporcionando una sensación de paz y bienestar.
+                </p>
+                <p class="text-lg font-bold text-teal-600 mt-auto">₡20.000 en adelante</p>
+                <!-- Expanded content area -->
+                <div class="expanded-content hidden mt-4 text-left">
+                    <p class="text-gray-700 text-sm">
+                        Este masaje utiliza movimientos fluidos y suaves, con presión ligera a media, diseñada para inducir un estado de profunda relajación. Se enfoca en liberar la tensión superficial y calmar el sistema nervioso. Sus ventajas incluyen la reducción del estrés y la ansiedad, mejora de la circulación sanguínea, alivio de dolores de cabeza tensionales, y promoción de un sueño más reparador. Es ideal para quienes buscan desconectar y revitalizar su energía.
+                    </p>
+                </div>
+                <button class="expand-btn mt-4 bg-teal-500 text-white font-bold py-2 px-4 rounded-full text-sm hover:bg-teal-600 transition duration-300 transform hover:scale-105 shadow-md btn-hover-effect">
+                    Expandir
+                </button>
+            </div>
+
+            <!-- Servicio de Masaje Terapéutico y Descontracturante -->
+            <div class="bg-gray-50 p-4 rounded-lg shadow-md flex flex-col items-center text-center">
+                <h3 class="text-xl font-semibold text-gray-800 mb-3">Masaje Terapéutico y Descontracturante</h3>
+                <img
+                    src="https://drive.google.com/uc?id=1CbICFUx_fWuc9T5v3_M1Wz0lrVrBVlLO"
+                    alt="Manos aplicando presión profunda en la espalda de una persona, ilustrando un masaje descontracturante."
+                    class="w-full h-48 rounded-md object-cover mb-3 shadow-md"
+                    onerror="this.onerror=null; this.src='https://placehold.co/600x400/CCCCCC/000000?text=Error+Cargando+Imagen';"
+                >
+                <p class="text-gray-700 text-sm mb-2 short-description">
+                    Alivia tensiones musculares profundas y nudos. Este masaje terapéutico se enfoca en descontracturar zonas específicas, restaurando la movilidad y reduciendo el dolor.
+                </p>
+                <p class="text-lg font-bold text-teal-600 mt-auto">₡35.000 en adelante</p>
+                <!-- Expanded content area -->
+                <div class="expanded-content hidden mt-4 text-left">
+                    <p class="text-gray-700 text-sm">
+                        Diseñado para tratar dolores musculares crónicos y tensiones específicas, este masaje aplica técnicas de presión profunda, fricción y estiramientos en áreas problemáticas. Sus características incluyen el trabajo sobre contracturas y puntos gatillo para liberar el músculo de la tensión acumulada. Las ventajas son una notable disminución del dolor, mejora de la flexibilidad muscular, aumento del rango de movimiento y recuperación acelerada de lesiones musculares. Es perfecto para aliviar molestias causadas por el estrés, malas posturas o actividad física intensa.
+                    </p>
+                </div>
+                <button class="expand-btn mt-4 bg-teal-500 text-white font-bold py-2 px-4 rounded-full text-sm hover:bg-teal-600 transition duration-300 transform hover:scale-105 shadow-md btn-hover-effect">
+                    Expandir
+                </button>
+            </div>
+
+            <!-- Servicio de Masaje con Piedras Calientes -->
+            <div class="bg-gray-50 p-4 rounded-lg shadow-md flex flex-col items-center text-center">
+                <h3 class="text-xl font-semibold text-gray-800 mb-3">Masaje con Piedras Calientes</h3>
+                <img
+                    src="https://drive.google.com/uc?id=1bFz0ekNcT1qQQcIYYdGTGWfHe-wE8iQZ"
+                    alt="Piedras calientes colocadas sobre la espalda de una persona, con un fondo suave y relajante."
+                    class="w-full h-48 rounded-md object-cover mb-3 shadow-md"
+                    onerror="this.onerror=null; this.src='https://placehold.co/600x400/CCCCCC/000000?text=Error+Cargando+Imagen';"
+                >
+                <p class="text-gray-700 text-sm mb-2 short-description">
+                    Experimenta una relajación profunda y alivio muscular con el calor terapéutico de las piedras volcánicas, que envuelven tu cuerpo en una sensación de calma total.
+                </p>
+                <p class="text-lg font-bold text-teal-600 mt-auto">₡30.000 en adelante</p>
+                <!-- Expanded content area -->
+                <div class="expanded-content hidden mt-4 text-left">
+                    <p class="text-gray-700 text-sm">
+                        Esta terapia milenaria utiliza piedras lisas de basalto calentadas, colocadas estratégicamente en puntos energéticos del cuerpo y usadas para masajear. El calor de las piedras penetra profundamente en los músculos, relajando y descontracturando. Entre sus ventajas se encuentran la profunda relajación muscular, alivio de la tensión y el dolor, mejora de la circulación, desintoxicación del cuerpo y una sensación de bienestar y armonía general. Es ideal para liberar el estrés y revitalizar el espíritu.
+                    </p>
+                </div>
+                <button class="expand-btn mt-4 bg-teal-500 text-white font-bold py-2 px-4 rounded-full text-sm hover:bg-teal-600 transition duration-300 transform hover:scale-105 shadow-md btn-hover-effect">
+                    Expandir
+                </button>
+            </div>
+
+            <!-- Servicio de Masaje Deportivo -->
+            <div class="bg-gray-50 p-4 rounded-lg shadow-md flex flex-col items-center text-center">
+                <h3 class="text-xl font-semibold text-gray-800 mb-3">Masaje Deportivo</h3>
+                <img
+                    src="https://drive.google.com/uc?id=1Rkv5q7ePOuWet_LxHXdf0bMhzxT9UW6D"
+                    alt="Piernas de un atleta siendo masajeado intensamente, con enfoque en la recuperación muscular."
+                    class="w-full h-48 rounded-md object-cover mb-3 shadow-md"
+                    onerror="this.onerror=null; this.src='https://placehold.co/600x400/CCCCCC/000000?text=Error+Cargando+Imagen';"
+                >
+                <p class="text-gray-700 text-sm mb-2 short-description">
+                    Preparación y recuperación muscular para atletas. Ayuda a prevenir lesiones y optimizar el rendimiento, acelerando la recuperación post-entrenamiento.
+                </p>
+                <p class="text-lg font-bold text-teal-600 mt-auto">₡35.000 en adelante</p>
+                <!-- Expanded content area -->
+                <div class="expanded-content hidden mt-4 text-left">
+                    <p class="text-gray-700 text-sm">
+                        Enfocado en las necesidades de los deportistas, este masaje utiliza técnicas más intensas y específicas para trabajar sobre los músculos involucrados en la actividad física. Sus características incluyen el estiramiento, compresión y fricción profunda. Las ventajas son la reducción del riesgo de lesiones, mejora de la flexibilidad, aceleración de la recuperación muscular después del ejercicio intenso, alivio de dolores musculares y mejora del rendimiento atlético general. Es un complemento esencial para cualquier rutina de entrenamiento.
+                    </p>
+                </div>
+                <button class="expand-btn mt-4 bg-teal-500 text-white font-bold py-2 px-4 rounded-full text-sm hover:bg-teal-600 transition duration-300 transform hover:scale-105 shadow-md btn-hover-effect">
+                    Expandir
+                </button>
+            </div>
+
+            <!-- Servicio de Desintoxicación Iónica -->
+            <div class="bg-gray-50 p-4 rounded-lg shadow-md flex flex-col items-center text-center">
+                <h3 class="text-xl font-semibold text-gray-800 mb-3">Desintoxicación Iónica</h3>
+                <img
+                    src="https://drive.google.com/uc?id=1LM57qUTDRWsdvy1sQT-1KZsLMUwMQUSe"
+                    alt="Pies sumergidos en un recipiente con agua y un dispositivo de desintoxicación iónica, mostrando burbujas."
+                    class="w-full h-48 rounded-md object-cover mb-3 shadow-md"
+                    onerror="this.onerror=null; this.src='https://placehold.co/600x400/CCCCCC/000000?text=Error+Cargando+Imagen';"
+                >
+                <p class="text-gray-700 text-sm mb-2 short-description">
+                    Ayuda a eliminar toxinas del cuerpo de manera efectiva. Promueve un mayor equilibrio, energía y bienestar general a través de un proceso natural.
+                </p>
+                <p class="text-lg font-bold text-teal-600 mt-auto">₡25.000 en adelante</p>
+                <!-- Expanded content area -->
+                <div class="expanded-content hidden mt-4 text-left">
+                    <p class="text-gray-700 text-sm">
+                        La desintoxicación iónica es un proceso que utiliza un dispositivo especial para crear un campo de iones en el agua, a través del cual los pies se sumergen. Se cree que los iones negativos son absorbidos por el cuerpo, atrayendo y neutralizando las toxinas. Sus ventajas incluyen la purificación del cuerpo, aumento de los niveles de energía, mejora de la circulación, reducción de la hinchazón y apoyo a la función hepática y renal, contribuyendo a una sensación de limpieza y vitalidad renovada.
+                    </p>
+                </div>
+                <button class="expand-btn mt-4 bg-teal-500 text-white font-bold py-2 px-4 rounded-full text-sm hover:bg-teal-600 transition duration-300 transform hover:scale-105 shadow-md btn-hover-effect">
+                    Expandir
+                </button>
+            </div>
+
+            <!-- Servicio de Drenaje Linfático -->
+            <div class="bg-gray-50 p-4 rounded-lg shadow-md flex flex-col items-center text-center">
+                <h3 class="text-xl font-semibold text-gray-800 mb-3">Drenaje Linfático</h3>
+                <img
+                    src="https://drive.google.com/uc?id=1mWbPE-dhpkZp8W-9QqfB8XBPDHc-_x59"
+                    alt="Manos realizando un masaje suave en la pierna, enfocándose en el drenaje linfático."
+                    class="w-full h-48 rounded-md object-cover mb-3 shadow-md"
+                    onerror="this.onerror=null; this.src='https://placehold.co/600x400/CCCCCC/000000?text=Error+Cargando+Imagen';"
+                >
+                <p class="text-gray-700 text-sm mb-2 short-description">
+                    Masaje suave que estimula el sistema linfático. Ideal para reducir la hinchazón, mejorar la circulación y promover la eliminación natural de líquidos.
+                </p>
+                <p class="text-lg font-bold text-teal-600 mt-auto">₡30.000 en adelante</p>
+                <!-- Expanded content area -->
+                <div class="expanded-content hidden mt-4 text-left">
+                    <p class="text-gray-700 text-sm">
+                        Es una técnica de masaje manual suave que se aplica sobre la piel con movimientos lentos, rítmicos y muy superficiales. Su objetivo es estimular el flujo de la linfa, una sustancia que transporta toxinas y desechos. Sus características incluyen la activación del sistema linfático para desinflamar. Las ventajas son la reducción de la retención de líquidos, eliminación de toxinas, fortalecimiento del sistema inmune, mejora de la circulación, y es excelente para el postoperatorio o para aliviar piernas cansadas e hinchadas.
+                    </p>
+                </div>
+                <button class="expand-btn mt-4 bg-teal-500 text-white font-bold py-2 px-4 rounded-full text-sm hover:bg-teal-600 transition duration-300 transform hover:scale-105 shadow-md btn-hover-effect">
+                    Expandir
+                </button>
+            </div>
+
+            <!-- Servicio de Masaje Facial y Limpieza Facial -->
+            <div class="bg-gray-50 p-4 rounded-lg shadow-md flex flex-col items-center text-center">
+                <h3 class="text-xl font-semibold text-gray-800 mb-3">Masaje Facial y Limpieza Facial</h3>
+                <img
+                    src="https://drive.google.com/uc?id=1HtzlmEK2PMrHqejtNvbYlpWdEWfJOYIp"
+                    alt="Rostro de una persona recibiendo un masaje facial, con toallas calientes y productos de spa."
+                    class="w-full h-48 rounded-md object-cover mb-3 shadow-md"
+                    onerror="this.onerror=null; this.src='https://placehold.co/600x400/CCCCCC/000000?text=Error+Cargando+Imagen';"
+                >
+                <p class="text-gray-700 text-sm mb-2 short-description">
+                    Combina una limpieza profunda con un masaje relajante. Rejuvenece tu piel, reduce la tensión facial y te deja con un cutis radiante y fresco.
+                </p>
+                <p class="text-lg font-bold text-teal-600 mt-auto">₡25.000 en adelante</p>
+                <!-- Expanded content area -->
+                <div class="expanded-content hidden mt-4 text-left">
+                    <p class="text-gray-700 text-sm">
+                        Este servicio integral comienza con una limpieza profunda para eliminar impurezas, seguida de una exfoliación y, si es necesario, una extracción suave. Luego, se aplica un masaje facial relajante que estimula la circulación y relaja los músculos del rostro. Las ventajas son una piel más limpia, hidratada y luminosa, reducción de líneas de expresión por tensión, mejora del tono y elasticidad de la piel, y una profunda sensación de relajación facial. Es un tratamiento ideal para revitalizar el rostro y desconectar.
+                    </p>
+                </div>
+                <button class="expand-btn mt-4 bg-teal-500 text-white font-bold py-2 px-4 rounded-full text-sm hover:bg-teal-600 transition duration-300 transform hover:scale-105 shadow-md btn-hover-effect">
+                    Expandir
+                </button>
+            </div>
+
+            <!-- Servicio de Maderoterapia -->
+            <div class="bg-gray-50 p-4 rounded-lg shadow-md flex flex-col items-center text-center">
+                <h3 class="text-xl font-semibold text-gray-800 mb-3">Maderoterapia</h3>
+                <img
+                    src="https://drive.google.com/uc?id=1qsnQwBk-toZgmbRFKs0ZFlbYrLvHTeU8"
+                    alt="Instrumentos de madera de maderoterapia sobre una superficie, listos para su uso."
+                    class="w-full h-48 rounded-md object-cover mb-3 shadow-md"
+                    onerror="this.onerror=null; this.src='https://placehold.co/600x400/CCCCCC/000000?text=Error+Cargando+Imagen';"
+                >
+                <p class="text-gray-700 text-sm mb-2 short-description">
+                    Técnica ancestral con instrumentos de madera. Moldea la figura, reduce la celulitis, y alivia tensiones, todo de forma natural y efectiva.
+                </p>
+                <p class="text-lg font-bold text-teal-600 mt-auto">₡35.000 en adelante</p>
+                <!-- Expanded content area -->
+                <div class="expanded-content hidden mt-4 text-left">
+                    <p class="text-gray-700 text-sm">
+                        La maderoterapia es una técnica de masaje que utiliza diferentes instrumentos de madera diseñados anatómicamente para estimular y equilibrar la energía del cuerpo. Sus características incluyen masajes con rodillos y copas de madera para trabajar sobre la celulitis, adiposidad localizada y drenaje. Sus ventajas son la reducción de celulitis, moldeado del contorno corporal, mejora de la circulación sanguínea y linfática, tonificación de la piel, y un efecto relajante que ayuda a liberar tensiones musculares. Es una alternativa natural y eficaz para la estética y el bienestar.
+                    </p>
+                </div>
+                <button class="expand-btn mt-4 bg-teal-500 text-white font-bold py-2 px-4 rounded-full text-sm hover:bg-teal-600 transition duration-300 transform hover:scale-105 shadow-md btn-hover-effect">
+                    Expandir
+                </button>
+            </div>
+
+            <!-- Servicio de Masaje Prenatal -->
+            <div class="bg-gray-50 p-4 rounded-lg shadow-md flex flex-col items-center text-center">
+                <h3 class="text-xl font-semibold text-gray-800 mb-3">Masaje Prenatal</h3>
+                <img
+                    src="https://drive.google.com/uc?id=1IGsgm6hMyTcBq9l5eHH9O5m4BBHVTlUG"
+                    alt="Mujer embarazada recibiendo un masaje en la espalda, en una posición cómoda para el embarazo."
+                    class="w-full h-48 rounded-md object-cover mb-3 shadow-md"
+                    onerror="this.onerror=null; this.src='https://placehold.co/600x400/CCCCCC/000000?text=Error+Cargando+Imagen';"
+                >
+                <p class="text-gray-700 text-sm mb-2 short-description">
+                    Masaje suave y seguro diseñado para aliviar las molestias y tensiones durante el embarazo, proporcionando confort y bienestar a la futura mamá.
+                </p>
+                <p class="text-lg font-bold text-teal-600 mt-auto">₡30.000 en adelante</p>
+                <!-- Expanded content area -->
+                <div class="expanded-content hidden mt-4 text-left">
+                    <p class="text-gray-700 text-sm">
+                        Adaptado específicamente para las necesidades de las mujeres embarazadas, este masaje se realiza con técnicas suaves y posiciones seguras para la mamá y el bebé. Se enfoca en aliviar dolores comunes como los de espalda, piernas y cuello, y reducir la hinchazón. Sus ventajas incluyen la mejora de la circulación, alivio de la tensión muscular, reducción del estrés y la ansiedad, ayuda a conciliar el sueño y una sensación general de calma y bienestar que beneficia tanto a la madre como al desarrollo fetal.
+                    </p>
+                </div>
+                <button class="expand-btn mt-4 bg-teal-500 text-white font-bold py-2 px-4 rounded-full text-sm hover:bg-teal-600 transition duration-300 transform hover:scale-105 shadow-md btn-hover-effect">
+                    Expandir
+                </button>
+            </div>
+
+            <!-- Servicio de Masaje Reductivo y Reafirmante -->
+            <div class="bg-gray-50 p-4 rounded-lg shadow-md flex flex-col items-center text-center">
+                <h3 class="text-xl font-semibold text-gray-800 mb-3">Masaje Reductivo y Reafirmante</h3>
+                <img
+                    src="https://drive.google.com/uc?id=1xsMiHHOmLRKPRI5GTNSb2Bnk7ZXT5fdN"
+                    alt="Manos realizando un masaje vigoroso en el abdomen para reducir medidas y reafirmar la piel."
+                    class="w-full h-48 rounded-md object-cover mb-3 shadow-md"
+                    onerror="this.onerror=null; this.src='https://placehold.co/600x400/CCCCCC/000000?text=Error+Cargando+Imagen';"
+                >
+                <p class="text-gray-700 text-sm mb-2 short-description">
+                    Técnicas especializadas para reducir medidas y mejorar la firmeza de la piel. Ayuda a moldear la figura y tonificar áreas específicas del cuerpo.
+                </p>
+                <p class="text-lg font-bold text-teal-600 mt-auto">₡40.000 en adelante</p>
+                <!-- Expanded content area -->
+                <div class="expanded-content hidden mt-4 text-left">
+                    <p class="text-gray-700 text-sm">
+                        Este masaje utiliza técnicas de presión intensa y movimientos rápidos, fricciones y amasamientos en zonas con acumulación de grasa y celulitis. Su objetivo es movilizar el tejido adiposo, activar la circulación y promover el drenaje. Sus ventajas son la reducción de medidas, mejora de la apariencia de la celulitis, tonificación y reafirmación de la piel, y estimulación del metabolismo. Se recomienda como complemento a un estilo de vida saludable para potenciar los resultados estéticos.
+                    </p>
+                </div>
+                <button class="expand-btn mt-4 bg-teal-500 text-white font-bold py-2 px-4 rounded-full text-sm hover:bg-teal-600 transition duration-300 transform hover:scale-105 shadow-md btn-hover-effect">
+                    Expandir
+                </button>
+            </div>
+
+            <!-- Servicio de Reflexología Podal -->
+            <div class="bg-gray-50 p-4 rounded-lg shadow-md flex flex-col items-center text-center">
+                <h3 class="text-xl font-semibold text-gray-800 mb-3">Reflexología Podal</h3>
+                <img
+                    src="https://drive.google.com/uc?id=1r0_FMxhe_TkxUH7aUj1_PVjDWcS_x8KO"
+                    alt="Pies recibiendo un masaje de reflexología con enfoque en puntos específicos."
+                    class="w-full h-48 rounded-md object-cover mb-3 shadow-md"
+                    onerror="this.onerror=null; this.src='https://placehold.co/600x400/CCCCCC/000000?text=Error+Cargando+Imagen';"
+                >
+                <p class="text-gray-700 text-sm mb-2 short-description">
+                    Masaje terapéutico en los pies que estimula puntos reflejos. Alivia tensiones en todo el cuerpo y promueve la relajación y el equilibrio.
+                </p>
+                <p class="text-lg font-bold text-teal-600 mt-auto">₡20.000 en adelante</p>
+                <!-- Expanded content area -->
+                <div class="expanded-content hidden mt-4 text-left">
+                    <p class="text-gray-700 text-sm">
+                        La reflexología podal se basa en la creencia de que hay puntos reflejos en los pies que corresponden a órganos y sistemas del cuerpo. Mediante la aplicación de presión en estos puntos, se busca estimular la autocuración y el equilibrio. Sus ventajas incluyen la reducción del estrés y la ansiedad, alivio de dolores y molestias en diferentes partes del cuerpo, mejora de la circulación, promoción de la relajación profunda y un impulso al bienestar general al armonizar las funciones del cuerpo. Es una terapia holística para el equilibrio total.
+                    </p>
+                </div>
+                <button class="expand-btn mt-4 bg-teal-500 text-white font-bold py-2 px-4 rounded-full text-sm hover:bg-teal-600 transition duration-300 transform hover:scale-105 shadow-md btn-hover-effect">
+                    Expandir
+                </button>
+            </div>
+
+            <!-- Servicio de Masaje con Ventosas -->
+            <div class="bg-gray-50 p-4 rounded-lg shadow-md flex flex-col items-center text-center">
+                <h3 class="text-xl font-semibold text-gray-800 mb-3">Masaje con Ventosas</h3>
+                <img
+                    src="https://drive.google.com/uc?id=1EgHLcdyP8n5Bp0WnpEQdljPCq2Pp1lPX"
+                    alt="Ventosas de masaje colocadas en la espalda de una persona, mostrando su aplicación."
+                    class="w-full h-48 rounded-md object-cover mb-3 shadow-md"
+                    onerror="this.onerror=null; this.src='https://placehold.co/600x400/CCCCCC/000000?text=Error+Cargando+Imagen';"
+                >
+                <p class="text-gray-700 text-sm mb-2 short-description">
+                    Terapia con ventosas para aliviar el dolor muscular, mejorar la circulación y promover la relajación profunda, liberando tensiones arraigadas.
+                </p>
+                <p class="text-lg font-bold text-teal-600 mt-auto">₡25.000 en adelante</p>
+                <!-- Expanded content area -->
+                <div class="expanded-content hidden mt-4 text-left">
+                    <p class="text-gray-700 text-sm">
+                        Esta técnica milenaria utiliza copas de vidrio o silicona que se aplican sobre la piel creando un vacío. Esto levanta los tejidos, estimulando el flujo sanguíneo y linfático. Las ventajas de la terapia con ventosas incluyen el alivio del dolor muscular y articular, reducción de la inflamación, mejora de la circulación y oxigenación de los tejidos, liberación de toxinas y una profunda relajación que ayuda a disolver contracturas. Es especialmente efectiva para tratar dolores de espalda, cuello y hombros, y liberar la tensión crónica.
+                    </p>
+                </div>
+                <button class="expand-btn mt-4 bg-teal-500 text-white font-bold py-2 px-4 rounded-full text-sm hover:bg-teal-600 transition duration-300 transform hover:scale-105 shadow-md btn-hover-effect">
+                    Expandir
+                </button>
+            </div>
+
+        </div>
+
+        <!-- Sección de Paquetes y Promociones Especiales -->
+        <div id="paquetes" class="mt-12 p-8 bg-gradient-soft-blue rounded-xl shadow-lg border border-green-200">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Paquetes y Promociones Especiales</h2>
+            <p class="text-lg text-gray-700 mb-6">
+                En Relax Natural Zen, queremos que disfrutes al máximo de tu bienestar. Por eso, hemos diseñado **paquetes de sesiones** con descuentos exclusivos y **cupones especiales** para que el cuidado de tu cuerpo y mente sea más accesible.
+            </p>
+            <div class="flex flex-col md:flex-row justify-center items-stretch gap-6 mb-8">
+                <!-- Paquetes de Sesiones -->
+                <div class="bg-white p-6 rounded-lg shadow-md flex-1 text-center">
+                    <i class="fas fa-box text-5xl text-teal-700 mb-4" aria-hidden="true"></i>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-3">Paquetes de Sesiones</h3>
+                    <p class="text-gray-700 mb-4">
+                        Adquiere un paquete y obtén un descuento significativo en comparación con el precio de sesiones individuales. ¡Puedes obtener **hasta un 40% de descuento** dependiendo del paquete!
+                    </p>
+                    <ul class="list-disc list-inside text-gray-700 space-y-1">
+                        <li>**5 Sesiones:** Descuento especial</li>
+                        <li>**10 Sesiones:** Descuento mayor</li>
+                        <li>**15 Sesiones:** Ahorro considerable</li>
+                        <li>**20 Sesiones:** Máximo beneficio</li>
+                    </ul>
+                </div>
+                <!-- Cupones Especiales -->
+                <div class="bg-white p-6 rounded-lg shadow-md flex-1 text-center">
+                    <i class="fas fa-tags text-5xl text-purple-700 mb-4" aria-hidden="true"></i>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-3">Cupones para Fechas Especiales</h3>
+                    <p class="text-gray-700 mb-4">
+                        Sorprende a tus seres queridos o consiéntete en fechas importantes con nuestros cupones de regalo y promociones únicas.
+                    </p>
+                    <ul class="list-disc list-inside text-gray-700 space-y-1">
+                        <li>Día del Padre</li>
+                        <li>Día de la Madre</li>
+                        <li>Día de San Valentín (14 de Febrero)</li>
+                        <li>Navidad</li>
+                        <li>Y más ocasiones especiales...</li>
+                    </ul>
+                    <p class="text-sm text-gray-600 mt-4">
+                        (Síguenos en redes sociales para estar al tanto de las promociones)
+                    </p>
+                </div>
+            </div>
+            <p class="text-lg text-gray-700 mt-6">
+                ¡Contáctanos para conocer en detalle nuestros paquetes y las promociones vigentes!
+            </p>
+        </div>
+
+
+        <!-- Sección Sobre el Terapeuta (Lionel Delgado Sánchez) -->
+        <div id="terapeuta" class="mt-12 p-8 bg-gradient-soft-blue rounded-xl shadow-lg border border-teal-200">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Conoce a Tu Terapeuta: Lionel Delgado Sánchez</h2>
+            <div class="flex flex-col md:flex-row items-center md:items-start gap-8">
+                <!-- Puedes añadir una imagen tuya aquí si lo deseas, en el futuro -->
+                <!-- <img src="URL_DE_TU_IMAGEN_DE_PROFIL" alt="Lionel Delgado Sánchez" class="w-32 h-32 rounded-full object-cover shadow-md mb-4 md:mb-0"> -->
+                <div class="text-gray-700 text-left md:text-center">
+                    <p class="text-lg leading-relaxed mb-4">
+                        Nací en 1989 y soy un terapeuta altamente calificado y profesional, con una profunda pasión por la **masoterapia y el aprendizaje continuo**. Mi experiencia de más de **35 años** en el arte del masaje me ha permitido desarrollar una sensibilidad única.
+                    </p>
+                    <p class="text-lg leading-relaxed mb-4">
+                        Como **terapeuta no vidente**, mi intuición y mis otros sentidos están altamente potenciados, permitiéndome una **percepción táctil inigualable** para detectar y aliviar las tensiones corporales. Mi enfoque es el **bienestar integral**, buscando que cada paciente se sienta comprendido, cómodo y en camino a la sanación tanto física como mental.
+                    </p>
+                    <p class="text-lg leading-relaxed mb-4">
+                        Confío plenamente en mis habilidades y en las **terapias manuales** que han demostrado ser altamente eficaces. Estoy en constante estudio y asistencia a seminarios, explorando nuevas especializaciones y técnicas para ofrecer siempre los tratamientos más avanzados y efectivos. Mi objetivo es seguir avanzando en el camino de la sanación de las personas y ayudar a los demás a alcanzar su máximo bienestar.
+                    </p>
+                    <p class="text-lg leading-relaxed mt-4 font-semibold text-teal-700">
+                        "Mi visión es clara a través de mis manos, para tu máximo bienestar."
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección de Métodos de Pago -->
+        <div id="pagos" class="mt-12 p-8 bg-gradient-soft-purple rounded-xl shadow-lg border border-purple-200">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Métodos de Pago</h2>
+            <p class="text-lg text-gray-700 mb-6">
+                Para tu comodidad, aceptamos los siguientes métodos de pago por tus sesiones de bienestar:
+            </p>
+            <div class="flex flex-wrap justify-center items-center gap-6">
+                <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-md">
+                    <i class="fas fa-money-bill-wave text-5xl text-green-700 mb-3" aria-hidden="true"></i>
+                    <p class="text-xl font-semibold text-gray-800">Efectivo</p>
+                </div>
+                <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-md">
+                    <i class="fas fa-mobile-alt text-5xl text-blue-700 mb-3" aria-hidden="true"></i>
+                    <p class="text-xl font-semibold text-gray-800">SINPE Móvil</p>
+                </div>
+                <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-md">
+                    <i class="fab fa-paypal text-5xl text-blue-800 mb-3" aria-hidden="true"></i>
+                    <p class="text-xl font-semibold text-gray-800">PayPal</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección de Política de Citas -->
+        <div id="politica" class="mt-12 p-8 bg-gradient-soft-orange rounded-xl shadow-lg border border-yellow-200">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Política de Citas</h2>
+            <p class="text-lg text-gray-700 mb-4 text-center">
+                En Relax Natural Zen, valoramos el tiempo de nuestros pacientes y el nuestro. Para garantizar la mejor experiencia y la gestión eficiente de nuestras citas, te agradecemos tomar en cuenta lo siguiente:
+            </p>
+            <ul class="text-gray-700 text-left space-y-3 px-4 md:px-8">
+                <li class="flex items-start">
+                    <i class="fas fa-calendar-alt text-teal-700 mt-1 mr-3 text-2xl" aria-hidden="true"></i>
+                    <div>
+                        <strong class="text-xl text-gray-800">Reprogramación General:</strong> Puedes reprogramar tu cita con al menos **24 horas de antelación** sin ningún costo. Esto nos permite ajustar nuestra agenda y ofrecer el espacio a otros pacientes.
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <i class="fas fa-ban text-red-700 mt-1 mr-3 text-2xl" aria-hidden="true"></i>
+                    <div>
+                        <strong class="text-xl text-gray-800">Cancelaciones de Sesiones Individuales:</strong> Para citas individuales, las cancelaciones deben realizarse con al menos **12 horas de antelación** para evitar posibles cargos por cancelación tardía.
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <i class="fas fa-box-open text-purple-700 mt-1 mr-3 text-2xl" aria-hidden="true"></i>
+                    <div>
+                        <strong class="text-xl text-gray-800">Paquetes de Sesiones (5, 10, 20 sesiones):</strong>
+                        Una vez adquirido un paquete, **no se realizan devoluciones de dinero**. Si necesitas cancelar una sesión dentro de un paquete, esta se podrá **reprogramar**, siempre y cuando se notifique con la antelación requerida (24 horas). Nuestro objetivo es asegurar que disfrutes de todas las sesiones de tu paquete.
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <i class="fas fa-car text-yellow-700 mt-1 mr-3 text-2xl" aria-hidden="true"></i>
+                    <div>
+                        <strong class="text-xl text-gray-800">Visitas a Domicilio:</strong>
+                        Si la cancelación de una cita a domicilio se realiza cuando el terapeuta ya ha iniciado el desplazamiento, se cobrará un **recargo por combustible**. Asimismo, **no se realizará la devolución total del dinero de la sesión** si la cancelación ocurre una vez que el terapeuta ya está en camino o ha llegado al lugar de la cita.
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <i class="fas fa-clock text-blue-700 mt-1 mr-3 text-2xl" aria-hidden="true"></i>
+                    <div>
+                        <strong class="text-xl text-gray-800">Puntualidad:</strong> Te pedimos llegar a tiempo a tu cita para poder disfrutar de la duración completa de tu masaje.
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Sección de Preguntas Frecuentes (FAQ) -->
+        <div id="faq" class="mt-12 p-8 bg-gradient-soft-blue rounded-xl shadow-lg border border-blue-200 text-left">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6 text-center">Preguntas Frecuentes</h2>
+
+            <div class="accordion w-full">
+                <!-- FAQ Item 1 -->
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span>¿Qué tipos de masajes ofrecen?</span>
+                        <i class="fas fa-chevron-down accordion-icon" aria-hidden="true"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p class="text-gray-700 text-base">
+                            Ofrecemos una amplia gama de masajes profesionales: Relajante, Terapéutico y Descontracturante, con Piedras Calientes, Deportivo, Desintoxicación Iónica, Drenaje Linfático, Masaje Facial y Limpieza Facial, Maderoterapia, Prenatal, Reductivo y Reafirmante, Reflexología Podal y con Ventosas. Cada uno diseñado para tu bienestar y necesidades específicas.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span>¿Ofrecen servicios a domicilio? ¿Qué zonas cubren?</span>
+                        <i class="fas fa-chevron-down accordion-icon" aria-hidden="true"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p class="text-gray-700 text-base">
+                            Sí, llevamos el bienestar directamente a tu hogar para tu máxima comodidad. Cubrimos toda la Zona Metropolitana de Costa Rica. Es importante considerar que se aplica un costo adicional por desplazamiento, el cual varía según la zona donde te encuentres.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span>¿Cuáles son sus horarios de atención?</span>
+                        <i class="fas fa-chevron-down accordion-icon" aria-hidden="true"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p class="text-gray-700 text-base">
+                            Nuestros horarios de atención son de Lunes a Viernes de 8:00 AM a 7:00 PM, y los Sábados de 9:00 AM a 1:00 PM. Te recomendamos agendar tu cita con anticipación para asegurar tu espacio.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span>¿Cómo puedo agendar una cita?</span>
+                        <i class="fas fa-chevron-down accordion-icon" aria-hidden="true"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p class="text-gray-700 text-base">
+                            La forma más fácil y rápida de agendar tu sesión es contactándonos directamente por WhatsApp al +506 8692-1010, a través de nuestra página de Facebook, o llamándonos al mismo número. ¡Estaremos encantados de ayudarte a encontrar el mejor momento para ti!
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 5 -->
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span>¿Qué métodos de pago aceptan?</span>
+                        <i class="fas fa-chevron-down accordion-icon" aria-hidden="true"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p class="text-gray-700 text-base">
+                            Para tu mayor comodidad, aceptamos los siguientes métodos de pago por tus sesiones de bienestar: **Efectivo**, **SINPE Móvil** y **PayPal**. Así puedes elegir la opción que mejor se adapte a ti.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 6 -->
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span>¿Cuál es su política de cancelación o reprogramación?</span>
+                        <i class="fas fa-chevron-down accordion-icon" aria-hidden="true"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p class="text-gray-700 text-base">
+                            Valoramos tu tiempo y el nuestro. Puedes **reprogramar** tu cita con al menos 24 horas de antelación sin ningún costo. Para **cancelaciones** de sesiones individuales, te pedimos avisar con 12 horas. Los paquetes de sesiones no tienen devolución de dinero, pero las sesiones pueden reprogramarse con 24 horas de aviso. Para citas a domicilio, si el terapeuta ya se desplazó y se cancela, se cobrará un recargo por combustible y no se hará devolución total del dinero de la sesión.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 7 -->
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span>¿Qué son los productos 100% naturales que mencionan?</span>
+                        <i class="fas fa-chevron-down accordion-icon" aria-hidden="true"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p class="text-gray-700 text-base">
+                            Próximamente, en Relax Natural Zen, tendremos disponible una exclusiva línea de **productos 100% naturales** diseñados cuidadosamente para complementar y potenciar los beneficios de tus masajes y tu bienestar general. ¡Mantente atento a nuestras redes sociales o contáctanos por WhatsApp para ser de los primeros en conocerlos y obtener más información!
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 8 -->
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span>¿Ofrecen paquetes o descuentos?</span>
+                        <i class="fas fa-chevron-down accordion-icon" aria-hidden="true"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p class="text-gray-700 text-base">
+                            ¡Sí! Para que disfrutes aún más de tu bienestar, ofrecemos **paquetes de 5, 10, 15 y 20 sesiones** que te permiten obtener hasta un 40% de descuento. Además, contamos con **cupones especiales** para fechas importantes como el Día del Padre, Día de la Madre, San Valentín y Navidad. Contáctanos para conocer en detalle nuestros paquetes y las promociones vigentes.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 9 -->
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span>¿Quién es el terapeuta de Relax Natural Zen?</span>
+                        <i class="fas fa-chevron-down accordion-icon" aria-hidden="true"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p class="text-gray-700 text-base">
+                            Nuestro terapeuta principal es **Lionel Delgado Sánchez**, quien cuenta con una impresionante experiencia de más de 35 años en masoterapia. Su profunda pasión por el bienestar y su habilidad única como terapeuta no vidente le otorgan una percepción táctil inigualable para detectar y aliviar las tensiones de tu cuerpo. Puedes conocer más detalles sobre Lionel en la sección "Conoce a Tu Terapeuta".
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 10 -->
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span>¿Qué beneficios tiene la desintoxicación iónica?</span>
+                        <i class="fas fa-chevron-down accordion-icon" aria-hidden="true"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p class="text-gray-700 text-base">
+                            La desintoxicación iónica ayuda a tu cuerpo a eliminar toxinas de manera efectiva, promoviendo un mayor equilibrio y energía. Sus beneficios incluyen la purificación del cuerpo, aumento de los niveles de energía, mejora de la circulación, reducción de la hinchazón y apoyo a la función hepática y renal, contribuyendo a una sensación de limpieza y vitalidad renovada.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 11 -->
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span>¿Qué es la maderoterapia y para qué sirve?</span>
+                        <i class="fas fa-chevron-down accordion-icon" aria-hidden="true"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p class="text-gray-700 text-base">
+                            La maderoterapia es una técnica ancestral que utiliza diferentes instrumentos de madera diseñados anatómicamente. Sirve para moldear la figura, reducir la celulitis, mejorar la circulación sanguínea y linfática, tonificar la piel, y también tiene un efecto relajante que ayuda a liberar tensiones musculares. Es una alternativa natural y eficaz tanto para la estética como para el bienestar profundo.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 12 -->
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span>¿Es seguro el masaje prenatal durante el embarazo?</span>
+                        <i class="fas fa-chevron-down accordion-icon" aria-hidden="true"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p class="text-gray-700 text-base">
+                            Sí, el masaje prenatal es completamente seguro y beneficioso cuando es realizado por un profesional cualificado. Adaptamos las técnicas y posiciones para garantizar la máxima seguridad y confort tanto para la futura mamá como para el bebé, aliviando dolores comunes de espalda, piernas, cuello, reduciendo el estrés y mejorando la calidad del sueño durante esta etapa especial.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 13 -->
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span>¿Qué debo hacer antes de mi masaje?</span>
+                        <i class="fas fa-chevron-down accordion-icon" aria-hidden="true"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p class="text-gray-700 text-base">
+                            Para aprovechar al máximo tu sesión, te recomendamos evitar comidas pesadas justo antes del masaje y llegar con tiempo suficiente para relajarte. Mantente bien hidratado. Es muy importante que nos comuniques cualquier condición médica preexistente, alergias o preferencias especiales al terapeuta antes de iniciar el masaje.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 14 -->
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span>¿Qué se recomienda después de una sesión de masaje?</span>
+                        <i class="fas fa-chevron-down accordion-icon" aria-hidden="true"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p class="text-gray-700 text-base">
+                            Después de tu masaje, te sugerimos beber abundante agua para ayudar a tu cuerpo a eliminar las toxinas liberadas durante la sesión. Es ideal evitar actividades extenuantes de inmediato y simplemente disfrutar de la profunda sensación de relajación y bienestar que has logrado. Si sientes alguna molestia inusual, no dudes en consultarnos.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 15 -->
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span>¿Cuánto duran las sesiones?</span>
+                        <i class="fas fa-chevron-down accordion-icon" aria-hidden="true"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p class="text-gray-700 text-base">
+                            La duración de cada sesión puede variar según el tipo de masaje que elijas y si es parte de un paquete. Generalmente, nuestras sesiones de masajes completos oscilan entre **60 y 90 minutos** para permitir un tratamiento integral y una relajación profunda. Para información específica sobre la duración de un servicio en particular, te invitamos a revisar su descripción detallada o a contactarnos directamente.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección de Llamada a la Acción/Contacto -->
+        <div id="contacto" class="bg-teal-700 text-white rounded-lg p-8 shadow-xl mb-12 mt-12">
+            <h2 class="text-3xl font-bold mb-4">Agenda Tu Sesión de Relax Hoy</h2>
+            <p class="text-lg mb-6">
+                Descubre el equilibrio perfecto para tu cuerpo y mente con Relax Natural Zen.
+                ¡Esperamos a nuestros **pacientes**!
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a href="tel:+50686921010" class="inline-block bg-white text-teal-700 font-bold py-3 px-8 rounded-full text-lg hover:bg-gray-100 transition duration-300 transform hover:scale-105 shadow-md btn-hover-effect">
+                    Llámanos: +506 8692-1010
+                </a>
+                <a href="https://wa.me/50686921010" target="_blank" class="inline-block bg-green-500 text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-green-600 transition duration-300 transform hover:scale-105 shadow-md btn-hover-effect btn-green-pulse">
+                    <i class="fab fa-whatsapp mr-2" aria-hidden="true"></i> WhatsApp
+                </a>
+            </div>
+            <p class="text-sm mt-4">
+                (Contáctanos directamente para más información o para reservar tu cita)
+            </p>
+        </div>
+
+        <!-- Sección de Testimonios -->
+        <div id="testimonios" class="mt-12 p-6 bg-gradient-soft-blue rounded-xl shadow-inner border border-blue-200">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-8">Lo que Nuestros **Pacientes** Dicen</h2>
+            <div id="testimonial-container" class="bg-white p-6 rounded-lg shadow-lg text-center testimonial-fade-in min-h-[150px] flex flex-col justify-center items-center">
+                <p id="testimonial-text" class="text-xl md:text-2xl text-gray-700 italic mb-4 leading-relaxed">
+                    "¡Una experiencia transformadora! El masaje relajante me dejó como nuevo."
+                </p>
+                <p id="testimonial-author" class="text-lg font-semibold text-teal-700">- María F., San José</p>
+            </div>
+        </div>
+
+        <!-- Sección de Redes Sociales -->
+        <div class="mt-12 p-6 bg-gradient-soft-green rounded-lg border border-blue-200 text-gray-700">
+            <h3 class="text-xl font-semibold text-blue-800 mb-3">Síguenos en Redes Sociales</h3>
+            <p class="text-base mb-4">
+                Conéctate con Relax Natural Zen y no te pierdas nuestras últimas novedades, consejos de bienestar y promociones especiales.
+            </p>
+            <a href="https://www.facebook.com/relax.natural.zen" target="_blank" class="inline-flex items-center bg-blue-700 text-white font-bold py-3 px-6 rounded-full text-lg hover:bg-blue-800 transition duration-300 transform hover:scale-105 shadow-md btn-hover-effect">
+                <i class="fab fa-facebook mr-2" aria-hidden="true"></i> Visita nuestra página de Facebook
+            </a>
+        </div>
+    </div>
+
+    <!-- Botón de Volver Arriba -->
+    <a href="#top" id="scrollToTopBtn" class="fixed bottom-6 right-6 bg-teal-500 text-white p-4 rounded-full shadow-lg hover:bg-teal-600 transition duration-300 transform hover:scale-110 z-40 scroll-to-top btn-hover-effect">
+        <i class="fas fa-arrow-up text-2xl" aria-hidden="true"></i>
+    </a>
+
+    <script>
+        const testimonials = [
+            { text: "El masaje relajante es pura magia, me dejó totalmente renovado y sin estrés. ¡Súper recomendado!", author: "Sofía M., Heredia" },
+            { text: "Mi espalda tenía nudos imposibles, pero el masaje terapéutico y descontracturante de Relax Natural Zen hizo milagros. ¡Excelente trabajo!", author: "José P., Cartago" },
+            { text: "Las piedras calientes son una experiencia única, sentí cómo el calor me relajaba por completo. Un lujo que vale la pena.", author: "Andrea R., Alajuela" },
+            { text: "Después de mi maratón, el masaje deportivo fue justo lo que necesitaba para recuperarme. Mis músculos lo agradecen.", author: "Carlos G., San José" },
+            { text: "La desintoxicación iónica me hizo sentir más ligero y con más energía. ¡Realmente funciona!", author: "Laura B., Heredia" },
+            { text: "El drenaje linfático me ayudó muchísimo con la retención de líquidos, me siento menos hinchada y con la piel más suave.", author: "Ana C., Limón" },
+            { text: "Mi piel luce increíble después del masaje facial y limpieza. Es como si me hubieran quitado años de encima.", author: "Diego V., Guanacaste" },
+            { text: "Probé la maderoterapia y estoy fascinada con los resultados en la celulitis. Además, es muy relajante.", author: "Mariana S., Puntarenas" },
+            { text: "El masaje prenatal fue un alivio para mis dolores de espalda durante el embarazo. Me sentí cuidada y relajada.", author: "Valeria N., San José" },
+            { text: "Estoy viendo resultados en mi abdomen con el masaje reductivo y reafirmante. ¡Definitivamente funciona para moldear!", author: "Pablo E., Alajuela" },
+            { text: "La reflexología podal es una maravilla, mis pies quedaron como nuevos y sentí un bienestar en todo el cuerpo.", author: "Daniela L., Heredia" },
+            { text: "El masaje con ventosas liberó la tensión de mis hombros, es un poco intenso pero el alivio es inmediato.", author: "Juan D., Cartago" },
+            { text: "Cada masaje relajante es una escapada del día a día. Siempre salgo flotando.", author: "Carmen A., San José" },
+            { text: "El equipo es súper profesional, el masaje terapéutico descontracturó todos mis puntos de dolor.", author: "Fernando Q., Heredia" },
+            { text: "Las piedras calientes fueron el toque perfecto para relajarme profundamente, una experiencia sensorial increíble.", author: "Sofía Z., Alajuela" },
+            { text: "El masaje deportivo me ayudó a acelerar mi recuperación y volver a entrenar con todo.", author: "Marco T., Limón" },
+            { text: "Me siento más ligera y desinflamada después de la desintoxicación iónica. Muy buen servicio.", author: "Isabella H., Guanacaste" },
+            { text: "El drenaje linfático es excelente para sentirte renovada y con menos hinchazón.", author: "Gabriela F., Puntarenas" },
+            { text: "Mi cara quedó luminosa y fresca con el masaje y limpieza facial. Un mimo que todas merecemos.", author: "Luis G., San José" },
+            { text: "Los resultados de la maderoterapia son visibles y me siento mucho más tonificada.", author: "Natalia C., Heredia" },
+            { text: "El masaje prenatal fue un regalo para mí y mi bebé, mucha tranquilidad y confort.", author: "Alejandra V., Cartago" },
+            { text: "Con el masaje reductivo he notado un cambio en la forma de mi cuerpo, ¡estoy muy feliz!", author: "Ricardo M., San José" },
+            { text: "La reflexología podal alivió el cansancio de mis pies y me dio una sensación de calma general.", author: "Valeria P., Alajuela" },
+            { text: "Las ventosas me ayudaron a liberar la tensión acumulada, es una técnica muy efectiva.", author": "Andrés K., Heredia" },
+            { text: "Un masaje relajante sublime, es mi momento favorito de la semana.", author: "Elena S., Cartago" },
+            { text: "El terapéutico fue clave para mi recuperación de una lesión, ¡gracias Relax Natural Zen!", author: "Javier O., San José" },
+            { text: "Las piedras calientes me transportaron a otro nivel de relajación, ¡pura armonía!", author: "Lucía D., Alajuela" },
+            { text: "Masaje deportivo top, mis piernas están listas para el próximo partido.", author: "Roberto L., Limón" },
+            { text: "Me sorprendió lo bien que me sentí después de la desintoxicación, más vital y limpia.", author: "Camila R., Guanacaste" },
+            { text: "El drenaje linfático es un antes y un después para la celulitis y la circulación.", author: "Felipe J., Puntarenas" },
+            { text: "Mi piel brilla y se siente espectacular con el masaje y limpieza facial, lo recomiendo a ojos cerrados.", author: "Martina B., San José" },
+            { text: "La maderoterapia ha sido mi secreto para moldear la figura, ¡y los resultados son increíbles!", author: "Sofía G., Heredia" },
+            { text: "El masaje prenatal fue un oasis en mi embarazo, me ayudó a dormir mucho mejor.", author: "Miguel A., Cartago" },
+            { text: "Estoy viendo mi cuerpo transformarse con el masaje reductivo, ¡muy contenta!", author: "Gabriela M., San José" },
+            { text: "La reflexología podal es adictiva, sales con los pies renovados y una sensación de paz.", author: "Esteban F., Alajuela" },
+            { text: "El masaje con ventosas fue intenso pero efectivo, liberó toda la tensión de mi cuello.", "author": "Paula N., Heredia" },
+            { text: "Cada sesión de masaje relajante es un respiro. ¡Es mi autoregalo favorito!", "author": "Carolina Z., Cartago" },
+            { text: "El descontracturante fue preciso para mi dolor de espalda. ¡Un alivio inmediato!", "author": "Jorge V., San José" },
+            { text: "Las piedras calientes son una delicia, te envuelven en un calor reconfortante.", "author": "Daniel P., Alajuela" },
+            { text: "Masaje deportivo de alto nivel, me siento listo para mi próximo entrenamiento.", "author": "Alex G., Limón" },
+            { text: "Me sentí más ligera y desinflamada con la desintoxicación iónica.", "author": "Silvia D., Guanacaste" },
+            { text: "El drenaje linfático ha sido excelente para mi circulación y para sentirme menos pesada.", "author": "Héctor S., Puntarenas" },
+            { text: "Mi rostro está radiante después del masaje y limpieza facial. ¡Un servicio de primera!", "author": "Verónica L., San José" },
+            { text: "La maderoterapia ha tonificado mi piel y me ayuda a relajarme al mismo tiempo.", "author": "Fernanda C., Heredia" },
+            { text: "El masaje prenatal fue un verdadero bálsamo para mis piernas cansadas. Muy atentas.", "author": "Mariano E., Cartago" },
+            { text: "Los masajes reductivos son mi complemento perfecto para mantenerme en forma.", "author": "Patricia B., San José" },
+            { text: "Mis pies quedaron muy relajados con la reflexología podal, ¡un placer!", "author": "Sergio A., Alajuela" },
+            { text: "El masaje con ventosas fue la solución para mi dolor de hombro crónico. Increíble.", "author": "Melissa O., Heredia" },
+            { text: "Siempre espero mi cita de masaje relajante, me ayuda a resetearme por completo.", "author": "Roberto C., San José" },
+            { text: "El descontracturante es mi salvación después de días largos de trabajo. ¡Un 10!", "author": "Cristina F., Alajuela" }
+        ];
+
+        let currentTestimonialIndex = 0;
+        const testimonialText = document.getElementById('testimonial-text');
+        const testimonialAuthor = document.getElementById('testimonial-author');
+        const testimonialContainer = document.getElementById('testimonial-container');
+
+        function showTestimonial() {
+            // Remove the fade-in class to reset animation
+            testimonialContainer.classList.remove('testimonial-fade-in');
+            // Force reflow to restart animation (hacky but works for instant reset)
+            void testimonialContainer.offsetWidth;
+
+            const testimonial = testimonials[currentTestimonialIndex];
+            testimonialText.textContent = `"${testimonial.text}"`;
+            testimonialAuthor.textContent = `- ${testimonial.author}`;
+
+            // Add the fade-in class to start animation
+            testimonialContainer.classList.add('testimonial-fade-in');
+
+            currentTestimonialIndex = (currentTestimonialIndex + 1) % testimonials.length;
+        }
+
+        // Mostrar el primer testimonio al cargar la página
+        document.addEventListener('DOMContentLoaded', () => {
+            showTestimonial();
+            // Cambiar testimonio cada 10 segundos
+            setInterval(showTestimonial, 10000);
+        });
+
+        // Lógica para mostrar/ocultar el botón "Volver Arriba"
+        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+        window.onscroll = function() {
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                scrollToTopBtn.style.display = "block";
+                scrollToTopBtn.style.opacity = "1";
+            } else {
+                scrollToTopBtn.style.opacity = "0"; // Fade out
+                setTimeout(() => { // Hide completely after fade out
+                    if (document.body.scrollTop <= 200 && document.documentElement.scrollTop <= 200) {
+                        scrollToTopBtn.style.display = "none";
+                    }
+                }, 300); // Same as transition duration
+            }
+        };
+
+        // Lógica para los botones de expandir/contraer servicios
+        document.querySelectorAll('.expand-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const expandedContent = this.previousElementSibling; // The div with class 'expanded-content'
+                const shortDescription = this.parentElement.querySelector('.short-description'); // The paragraph with short description
+
+                if (expandedContent.classList.contains('hidden')) {
+                    expandedContent.classList.remove('hidden');
+                    shortDescription.classList.add('hidden'); // Hide short description
+                    this.textContent = 'Contraer';
+                } else {
+                    expandedContent.classList.add('hidden');
+                    shortDescription.classList.remove('hidden'); // Show short description
+                    this.textContent = 'Expandir';
+                }
+            });
+        });
+
+        // Lógica para el acordeón de Preguntas Frecuentes
+        document.querySelectorAll('.accordion-header').forEach(header => {
+            header.addEventListener('click', function() {
+                const content = this.nextElementSibling;
+                const icon = this.querySelector('.accordion-icon');
+
+                // Close other open accordions
+                document.querySelectorAll('.accordion-content.open').forEach(openContent => {
+                    if (openContent !== content) {
+                        openContent.classList.remove('open');
+                        openContent.previousElementSibling.classList.remove('active');
+                        openContent.previousElementSibling.querySelector('.accordion-icon').classList.remove('fa-chevron-up');
+                        openContent.previousElementSibling.querySelector('.accordion-icon').classList.add('fa-chevron-down');
+                    }
+                });
+
+                // Toggle current accordion
+                content.classList.toggle('open');
+                this.classList.toggle('active');
+                icon.classList.toggle('fa-chevron-down');
+                icon.classList.toggle('fa-chevron-up');
+            });
+        });
+    </script>
+</body>
+</html>
