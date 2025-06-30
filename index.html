@@ -187,6 +187,28 @@
             transform: translateY(-5px) scale(1.02); /* Levanta y agranda ligeramente */
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Sombra más pronunciada */
         }
+
+        /* Estilos para el contenedor del consejo del día */
+        #daily-advice-section {
+            background-image: linear-gradient(to top left, #38b2ac, #319795); /* Un degradado de teal */
+            color: #ffffff;
+            padding: 2rem;
+            border-radius: 1rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+            text-align: center;
+            font-size: 1.125rem; /* text-lg */
+            line-height: 1.75rem; /* leading-7 */
+        }
+        #daily-advice-text {
+            font-style: italic;
+            font-weight: 500; /* Medium weight */
+            margin-bottom: 0.5rem;
+        }
+        #daily-advice-date {
+            font-size: 0.875rem; /* text-sm */
+            opacity: 0.8;
+        }
     </style>
 </head>
 <body class="p-4 md:p-8 lg:p-12 min-h-screen flex flex-col items-center justify-center">
@@ -226,6 +248,13 @@
         </div>
     </div>
     <div class="max-w-5xl w-full bg-gray-900 rounded-xl shadow-2xl p-6 md:p-10 lg:p-12 text-center border-t-8 border-teal-600">
+        <!-- Sección del Consejo del Día -->
+        <div id="daily-advice-section" class="animate-on-scroll" role="region" aria-live="polite" aria-atomic="true">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Consejo del Día</h2>
+            <p id="daily-advice-text">Cargando el consejo...</p>
+            <p id="daily-advice-date"></p>
+        </div>
+
         <!-- Encabezado de la página (El h1 anterior ahora está en el hero section) -->
         <p class="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed animate-on-scroll">
             Tu oasis de bienestar y relajación. Nos encanta lo **natural**, por eso nuestro nombre. Ofrecemos masajes profesionales en la comodidad de tu hogar o en nuestro espacio dedicado. <strong class="text-teal-400">Permítete experimentar una profunda calma, revitalizar tu energía y transformar tu día.</strong>
@@ -805,7 +834,6 @@
     <a href="https://wa.me/50686921010" target="_blank" class="fixed bottom-6 right-6 bg-green-600 text-white p-4 rounded-full shadow-lg text-3xl z-50 hover:bg-green-700 transition duration-300 transform hover:scale-110 btn-hover-effect btn-green-pulse" aria-label="Contactar a Relax Natural Zen por WhatsApp flotante">
         <i class="fab fa-whatsapp" aria-hidden="true"></i>
     </a>
-    <!-- El botón flotante de llamada ha sido eliminado según tu solicitud -->
     <!-- Botón de Volver Arriba -->
     <button id="scrollToTopBtn" class="scroll-to-top fixed bottom-6 left-6 bg-teal-600 text-white p-4 rounded-full shadow-lg text-xl z-50 hover:bg-teal-700 transition duration-300 transform hover:scale-110 btn-hover-effect" aria-label="Volver al inicio de la página">
         <i class="fas fa-arrow-up" aria-hidden="true"></i>
@@ -1103,7 +1131,12 @@
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('is-visible');
-                        observer.unobserve(entry.target); // Dejar de observar una vez que se ha animado
+                        // No unobserve si quieres que el elemento se anime cada vez que entra en vista
+                        // Si solo quieres que se anime una vez, descomenta la línea de abajo:
+                        // observer.unobserve(entry.target);
+                    } else {
+                        // Opcional: Si quieres que el elemento se "resetee" cuando sale de la vista
+                        // entry.target.classList.remove('is-visible');
                     }
                 });
             }, {
@@ -1114,7 +1147,44 @@
             animateElements.forEach(element => {
                 observer.observe(element);
             });
+
+            // Lógica para cargar el Consejo del Día
+            const dailyAdviceText = document.getElementById('daily-advice-text');
+            const dailyAdviceDate = document.getElementById('daily-advice-date');
+
+            // La URL de donde tu página leerá el consejo.
+            // Si alojas tu sitio en GitHub Pages, y el archivo está en la raíz, podría ser '/daily_advice.json'
+            // Si está en una subcarpeta, como 'data/', sería '/data/daily_advice.json'
+            // Para el ejemplo, asumimos que estará en la raíz del mismo dominio.
+            const adviceFileUrl = './daily_advice.json'; // O algo como '/data/daily_advice.json' si lo pones en una carpeta 'data'
+
+            fetch(adviceFileUrl)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    if (data && data.advice) {
+                        dailyAdviceText.textContent = `"${data.advice}"`;
+                        if (data.date) {
+                            // Formatear la fecha para que se vea bien en español
+                            const dateOptions = { year: 'numeric', month: 'long', day: 'numeric' };
+                            const formattedDate = new Date(data.date).toLocaleDateString('es-ES', dateOptions);
+                            dailyAdviceDate.textContent = `Actualizado el ${formattedDate}`;
+                        }
+                    } else {
+                        dailyAdviceText.textContent = 'No se pudo cargar el consejo del día. ¡Vuelve pronto!';
+                        dailyAdviceDate.textContent = '';
+                    }
+                })
+                .catch(error => {
+                    console.error('Error al cargar el consejo del día:', error);
+                    dailyAdviceText.textContent = 'Parece que hubo un problema cargando el consejo. Por favor, intenta de nuevo más tarde.';
+                    dailyAdviceDate.textContent = '';
+                });
         });
     </script>
 </body>
-</html>Enter file contents here
+</html>
