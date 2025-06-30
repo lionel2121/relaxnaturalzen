@@ -28,9 +28,10 @@ jobs:
       run: pip install google-generativeai
 
     - name: Generar y Guardar el Consejo
-      # Ejecuta tu script de Python directamente, ya que el checkout ya lo coloca en la raíz de trabajo.
-      # Esto debería evitar la duplicación de la ruta.
+      # Ejecuta tu script de Python desde la raíz del repositorio.
+      # La opción 'working-directory' fuerza la ubicación de ejecución.
       run: python generate_daily_advice.py
+      working-directory: ${{ github.workspace }}
       env:
         GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
 
@@ -43,11 +44,12 @@ jobs:
     - name: Realizar Commit y Push del Consejo Actualizado
       # Añade el archivo JSON modificado, crea un commit y lo sube al repositorio.
       # La opción "|| echo 'No hay cambios para commit'" evita que falle si el contenido no cambió.
-      # Añadimos el path completo para el git add para asegurar que lo encuentre.
+      # También usamos 'working-directory' para asegurar el 'git add'.
       run: |
         git add daily_advice.json
         git commit -m "Automatizado: Actualización del Consejo del Día" || echo "No hay cambios para commit"
         git push
+      working-directory: ${{ github.workspace }}
       env:
         # GITHUB_TOKEN es un token de acceso temporal que GitHub proporciona automáticamente.
         # Permite que el workflow haga cambios en el repositorio.
