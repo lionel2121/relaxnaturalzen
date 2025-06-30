@@ -1,0 +1,54 @@
+name: Generar Consejo Diario
+
+on:
+  workflow_dispatch: # Permite ejecutar el workflow manualmente desde GitHub UI
+  schedule:
+    # Se ejecuta todos los días a las 12:00 PM UTC, que es 6:00 AM hora de Costa Rica (GMT-6).
+    # Si tu zona horaria es diferente o quieres otra hora, ajusta este valor.
+    # Formato: minutos horas * * * (minutos 0-59, horas 0-23)
+    - cron: '0 12 * * *' 
+
+jobs:
+  generate_and_update:
+    runs-on: ubuntu-latest # El sistema operativo donde se ejecutará la acción
+
+    steps:
+    - name: Checkout del Repositorio
+      # Descarga tu código para que el workflow pueda acceder a él.
+      uses: actions/checkout@v4
+
+    - name: Configurar Python
+      # Configura el entorno de Python para ejecutar tu script.
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.x' # Usa la última versión de Python 3.x disponible
+
+    - name: Instalar Dependencias
+      # Instala las bibliotecas de Python que tu script necesita (como google-generativeai).
+      run: pip install google-generativeai
+
+    - name: Generar y Guardar el Consejo
+      # Ejecuta tu script de Python directamente, ya que el checkout ya lo coloca en la raíz de trabajo.
+      # Esto debería evitar la duplicación de la ruta.
+      run: python generate_daily_advice.py
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+
+    - name: Configurar Git para el Commit
+      # Configura la identidad de Git para que los commits se atribuyan al bot de GitHub Actions.
+      run: |
+        git config user.name "GitHub Actions Bot"
+        git config user.email "actions@github.com"
+
+    - name: Realizar Commit y Push del Consejo Actualizado
+      # Añade el archivo JSON modificado, crea un commit y lo sube al repositorio.
+      # La opción "|| echo 'No hay cambios para commit'" evita que falle si el contenido no cambió.
+      # Añadimos el path completo para el git add para asegurar que lo encuentre.
+      run: |
+        git add daily_advice.json
+        git commit -m "Automatizado: Actualización del Consejo del Día" || echo "No hay cambios para commit"
+        git push
+      env:
+        # GITHUB_TOKEN es un token de acceso temporal que GitHub proporciona automáticamente.
+        # Permite que el workflow haga cambios en el repositorio.
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
