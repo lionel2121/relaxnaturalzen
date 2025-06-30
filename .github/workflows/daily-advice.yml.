@@ -28,10 +28,9 @@ jobs:
       run: pip install google-generativeai
 
     - name: Generar y Guardar el Consejo
-      # Ejecuta tu script de Python.
-      # Usamos github.workspace para asegurar la ruta correcta del script.
-      # La variable de entorno GEMINI_API_KEY se inyecta aquí desde los Secrets de GitHub.
-      run: python ${{ github.workspace }}/generate_daily_advice.py
+      # Ejecuta tu script de Python directamente, ya que el checkout ya lo coloca en la raíz de trabajo.
+      # Esto debería evitar la duplicación de la ruta.
+      run: python generate_daily_advice.py
       env:
         GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
 
@@ -44,9 +43,9 @@ jobs:
     - name: Realizar Commit y Push del Consejo Actualizado
       # Añade el archivo JSON modificado, crea un commit y lo sube al repositorio.
       # La opción "|| echo 'No hay cambios para commit'" evita que falle si el contenido no cambió.
-      # Usamos github.workspace para asegurar la ruta correcta del archivo JSON.
+      # Añadimos el path completo para el git add para asegurar que lo encuentre.
       run: |
-        git add ${{ github.workspace }}/daily_advice.json
+        git add daily_advice.json
         git commit -m "Automatizado: Actualización del Consejo del Día" || echo "No hay cambios para commit"
         git push
       env:
