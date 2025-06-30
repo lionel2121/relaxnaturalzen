@@ -3,11 +3,6 @@ import json
 import os
 import datetime
 
-# Configura tu clave de API de Gemini.
-# Se recomienda usar un secreto de GitHub Actions para GEMINI_API_KEY.
-# Por ejemplo, en tu flujo de trabajo de GitHub, tendrías:
-# env:
-#   GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
 genai.configure(api_key=os.environ.get('GEMINI_API_KEY'))
 
 def generate_daily_advice():
@@ -16,46 +11,37 @@ def generate_daily_advice():
     y lo guarda en un archivo JSON.
     """
     try:
-        # Define el modelo de IA a utilizar.
-        # 'gemini-2.0-flash' es un modelo compatible para generación de contenido.
         model = genai.GenerativeModel('gemini-2.0-flash')
 
-        # Define el prompt para generar el consejo.
-        # Personaliza el prompt para que el consejo sea relevante para tu negocio
-        # de masajes "Relax Natural Zen" y para Leo, un masajista no vidente.
         prompt = (
-            "Eres un experto en masajes y bienestar. Genera un consejo diario "
-            "corto, inspirador y útil para un masajista profesional no vidente llamado Leo, "
-            "que dirige una empresa de masajes llamada 'Relax Natural Zen'. "
-            "Los masajes que ofrece incluyen: relajante, descontracturante o terapéutico, "
-            "drenaje linfático, reductivo y reafirmante, maderoterapia, aromaterapia, "
-            "reflexología, desintoxicación iónica, masaje deportivo, yesoterapia, "
-            "masaje o limpieza facial, terapia termo reductora, piedras calientes, "
-            "masaje sueco, tratamiento de movimiento del colon o infección intestinal. "
-            "El consejo debe ser positivo y enfocado en el bienestar, la conexión con el cliente, "
-            "la importancia del tacto o la energía. "
-            "Formato: 'Consejo del día: [Tu consejo aquí]'."
+            "Eres un experto profesional en masoterapia, salud integral y bienestar, con experiencia en tratar a pacientes de todas las edades y condiciones. "
+            "Genera un consejo diario, profesional, claro y útil, redactado en nombre de la empresa 'Relax Natural Zen', que atiende a pacientes —no clientes— con enfoque humano, ético y personalizado. "
+            "El mensaje debe reflejar un compromiso genuino con el bienestar físico y emocional de las personas, transmitiendo confianza, curiosidad y conexión. "
+            "Debe estar redactado en un lenguaje profesional pero accesible, evitando tecnicismos complejos, sin sonar informal o comercial. "
+            "El consejo debe combinar temas como: "
+            "1. Beneficios reales de los masajes que ofrecemos (relajante, deportivo, descontracturante, drenaje linfático, reflexología podal y manual, masaje reductivo, reafirmante, piedras calientes, copas suecas, maderoterapia, aromaterapia, desintoxicación iónica, entre otros). "
+            "2. Sugerencias prácticas de alimentación saludable y bienestar diario, como cantidad adecuada de agua, tiempo de caminata según peso, etc. "
+            "3. Consejos sobre postura o ejercicios simples para aliviar tensiones. "
+            "4. Recomendaciones de infusiones naturales, hábitos sanos o curiosidades educativas sobre salud y bienestar. "
+            "Incluye que Relax Natural Zen ofrece servicio a domicilio en toda la zona metropolitana de forma sutil y natural, sin que parezca publicidad directa. "
+            "El consejo debe tener entre 80 y 100 palabras, incluir 1 o 2 emojis ubicados de forma estratégica para hacerlo más atractivo visualmente. "
+            "Permite una mención breve y sutil de los servicios o acompañamiento que ofrecemos, sin sobrepasar el límite de palabras. "
+            "Finaliza con una frase distinta cada vez que invite al lector a volver por más consejos, que sea cálida, profesional y genuina, transmitiendo continuidad en el cuidado del bienestar. "
+            "Evita repetir exactamente las mismas palabras todos los días. "
+            "Formato final: 'Consejo del día: [Tu consejo aquí] [Emojis] [Frase final de invitación].'"
         )
 
-        # Genera el contenido utilizando el modelo de IA.
         response = model.generate_content(prompt)
-
-        # Extrae el texto del consejo.
         advice_text = response.candidates[0].content.parts[0].text
-
-        # Obtiene la fecha actual en formato ISO 8601 (YYYY-MM-DD).
         today_date = datetime.date.today().isoformat()
 
-        # Crea el objeto JSON.
         advice_data = {
             "date": today_date,
             "advice": advice_text
         }
 
-        # Define la ruta del archivo JSON.
         file_path = 'daily_advice.json'
 
-        # Guarda el consejo en el archivo JSON.
         with open(file_path, 'w', encoding='utf-8') as f:
             json.dump(advice_data, f, ensure_ascii=False, indent=4)
 
