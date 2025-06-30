@@ -1,42 +1,62 @@
 name: Generar Consejo Diario
 
 on:
-  workflow_dispatch:
+  workflow_dispatch: # Permite ejecutar el workflow manualmente desde GitHub UI
   schedule:
-    - cron: '0 12 * * *'
+    # Se ejecuta todos los días a las 12:00 PM UTC, que es 6:00 AM hora de Costa Rica (GMT-6).
+    # Si tu zona horaria es diferente o quieres otra hora, ajusta este valor.
+    # Formato: minutos horas * * * (minutos 0-59, horas 0-23)
+    - cron: '0 12 * * *' 
 
 jobs:
   generate_and_update:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest # El sistema operativo donde se ejecutará la acción
 
     steps:
     - name: Checkout del Repositorio
+      # Descarga tu código para que el workflow pueda acceder a él.
       uses: actions/checkout@v4
 
     - name: Configurar Python
+      # Configura el entorno de Python para ejecutar tu script.
       uses: actions/setup-python@v5
       with:
-        python-version: '3.x'
+        python-version: '3.x' # Usa la última versión de Python 3.x disponible
 
     - name: Instalar Dependencias
+      # Instala las bibliotecas de Python que tu script necesita (como google-generativeai).
       run: pip install google-generativeai
 
+    - name: Listar Archivos en Workspace (Depuración Crucial)
+      # Este paso nos mostrará exactamente qué archivos hay en la raíz del repositorio
+      # justo antes de intentar ejecutar el script.
+      run: |
+        echo "Archivos en el directorio de trabajo (${{ github.workspace }}):"
+        ls -l ${{ github.workspace }}
+
     - name: Generar y Guardar el Consejo
-      run: python generate_daily_advice.py
-      working-directory: ${{ github.workspace }}
+      # Navega explícitamente al directorio del repositorio y ejecuta el script.
+      # Usamos el nombre exacto del archivo para evitar cualquier ambigüedad.
+      run: |
+        cd ${{ github.workspace }}
+        python generate_daily_advice.py
       env:
         GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
 
     - name: Configurar Git para el Commit
+      # Configura la identidad de Git para que los commits se atribuyan al bot de GitHub Actions.
       run: |
         git config user.name "GitHub Actions Bot"
         git config user.email "actions@github.com"
 
     - name: Realizar Commit y Push del Consejo Actualizado
+      # Navega explícitamente al directorio del repositorio antes de añadir y commitear el archivo.
       run: |
+        cd ${{ github.workspace }}
         git add daily_advice.json
         git commit -m "Automatizado: Actualización del Consejo del Día" || echo "No hay cambios para commit"
         git push
-      working-directory: ${{ github.workspace }}
       env:
+        # GITHUB_TOKEN es un token de acceso temporal que GitHub proporciona automáticamente.
+        # Permite que el workflow haga cambios en el repositorio.
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
