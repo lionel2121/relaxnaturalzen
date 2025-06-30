@@ -28,11 +28,9 @@ jobs:
       run: pip install google-generativeai
 
     - name: Generar y Guardar el Consejo
-      # Navega explícitamente al directorio del repositorio antes de ejecutar el script.
-      # Esto es crucial para resolver el problema de la ruta duplicada.
-      run: |
-        cd ${{ github.workspace }}
-        python generate_daily_advice.py
+      # Ejecuta tu script de Python, usando la ruta absoluta directa.
+      # Esta es la forma más robusta de asegurar que el archivo sea encontrado.
+      run: python /home/runner/work/Relax.natural.sen/Relax.natural.sen/generate_daily_advice.py
       env:
         GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
 
@@ -43,10 +41,10 @@ jobs:
         git config user.email "actions@github.com"
 
     - name: Realizar Commit y Push del Consejo Actualizado
-      # Navega explícitamente al directorio del repositorio antes de añadir y commitear el archivo.
+      # Añade el archivo JSON modificado, crea un commit y lo sube al repositorio.
+      # Usamos la ruta absoluta directa para el git add también.
       run: |
-        cd ${{ github.workspace }}
-        git add daily_advice.json
+        git add /home/runner/work/Relax.natural.sen/Relax.natural.sen/daily_advice.json
         git commit -m "Automatizado: Actualización del Consejo del Día" || echo "No hay cambios para commit"
         git push
       env:
