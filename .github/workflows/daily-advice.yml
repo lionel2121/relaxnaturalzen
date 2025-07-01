@@ -2,11 +2,10 @@ name: Generar Consejo Diario
 
 on:
   workflow_dispatch: # Permite ejecutar el workflow manualmente desde GitHub UI
-  schedule:
-    # Se ejecuta todos los días a las 12:00 PM UTC, que es 6:00 AM hora de Costa Rica (GMT-6).
-    # Si tu zona horaria es diferente o quieres otra hora, ajusta este valor.
-    # Formato: minutos horas * * * (minutos 0-59, horas 0-23)
-    - cron: '0 12 * * *' 
+  schedule:    
+    # Se ejecuta cada 3 horas (a los 0 minutos de las horas 0, 3, 6, 9, 12, 15, 18, 21 UTC).
+    # Esto se traduce a 6 PM, 9 PM, 12 AM, 3 AM, 6 AM, 9 AM, 12 PM, 3 PM hora de Costa Rica (GMT-6).
+    - cron: '0 */3 * * *' 
 
 jobs:
   generate_and_update:
@@ -26,13 +25,6 @@ jobs:
     - name: Instalar Dependencias
       # Instala las bibliotecas de Python que tu script necesita (como google-generativeai).
       run: pip install google-generativeai
-
-    - name: Listar Archivos en Workspace (Depuración Crucial)
-      # Este paso nos mostrará exactamente qué archivos hay en la raíz del repositorio
-      # justo antes de intentar ejecutar el script.
-      run: |
-        echo "Archivos en el directorio de trabajo (${{ github.workspace }}):"
-        ls -l ${{ github.workspace }}
 
     - name: Generar y Guardar el Consejo
       # Navega explícitamente al directorio del repositorio y ejecuta el script.
