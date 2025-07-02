@@ -4,6 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Relax Natural Zen - Masajes Profesionales</title>
+
+    <!-- Open Graph / Facebook / WhatsApp / LinkedIn Tags -->
+    <!-- Estas etiquetas controlan cómo se ve tu enlace cuando se comparte en redes sociales -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://relaxnaturalzen.com/">
+    <meta property="og:title" content="Relax Natural Zen - Tu Oasis de Bienestar y Masajes Profesionales">
+    <meta property="og:description" content="Descubre la relajación profunda y el bienestar integral con Relax Natural Zen. Masajes profesionales a domicilio o en nuestro espacio. ¡Agenda tu cita hoy!">
+    <meta property="og:image" content="https://i.ibb.co/Q7xkTw9F/imagen-de-fondo-para-relax-natural-zen.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter Card Tags -->
+    <!-- Estas etiquetas son específicas para Twitter, similar a Open Graph -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://relaxnaturalzen.com/">
+    <meta property="twitter:title" content="Relax Natural Zen - Tu Oasis de Bienestar y Masajes Profesionales">
+    <meta property="twitter:description" content="Descubre la relajación profunda y el bienestar integral con Relax Natural Zen. Masajes profesionales a domicilio o en nuestro espacio. ¡Agenda tu cita hoy!">
+    <meta property="twitter:image" content="https://i.ibb.co/Q7xkTw9F/imagen-de-fondo-para-relax-natural-zen.png">
+
     <!-- Incluye Tailwind CSS para un diseño responsivo y moderno -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Incluye Font Awesome para el ícono de WhatsApp, Facebook y métodos de pago -->
@@ -205,10 +224,7 @@
             font-weight: 500; /* Medium weight */
             margin-bottom: 0.5rem;
         }
-        #daily-advice-date {
-            font-size: 0.875rem; /* text-sm */
-            opacity: 0.8;
-        }
+        /* Eliminamos #daily-advice-date del CSS también */
     </style>
 </head>
 <body class="p-4 md:p-8 lg:p-12 min-h-screen flex flex-col items-center justify-center">
@@ -252,7 +268,7 @@
         <div id="daily-advice-section" class="animate-on-scroll" role="region" aria-live="polite" aria-atomic="true">
             <h2 class="text-3xl md:text-4xl font-bold mb-4">Consejo del Día</h2>
             <p id="daily-advice-text">Cargando el consejo...</p>
-            <p id="daily-advice-date"></p>
+            <!-- Eliminamos la línea de la fecha aquí -->
         </div>
 
         <!-- Encabezado de la página (El h1 anterior ahora está en el hero section) -->
@@ -663,7 +679,7 @@
                     La experiencia más completa para tu bienestar y una transformación profunda, que abarca relajación, desintoxicación y revitalización facial.
                 </p>
                 <ul class="text-gray-300 text-left space-y-2 mb-6">
-                    <li class="flex items-center"><i class="fas fa-check-circle text-purple-500 mr-2" aria-hidden="true"></i> 3 Sesiones a elección (cualquier masaje)</li>
+                    <li class="flex items-center"><i class="fas fa-check-circle text-purple-500 mr-2" aria="true"></i> 3 Sesiones a elección (cualquier masaje)</li>
                     <li class="flex items-center"><i class="fas fa-check-circle text-purple-500 mr-2" aria-hidden="true"></i> 2 Sesiones de Desintoxicación Iónica</li>
                     <li class="flex items-center"><i class="fas fa-check-circle text-purple-500 mr-2" aria-hidden="true"></i> 1 Sesión de Limpieza Facial Profunda</li>
                 </ul>
@@ -744,7 +760,7 @@
                 </button>
                 <div class="accordion-content" id="accordion-content-0" role="region" aria-labelledby="accordion-header-0">
                     <p class="text-gray-300 p-4 pt-0">
-                        Los masajes ofrecen una multitud de beneficios transformadores, incluyendo la **reducción profunda del estrés y la ansiedad**, el **alivio efectivo del dolor muscular y la tensión**, una **mejora significativa de la circulación sanguínea y linfática**, la **promoción de un sueño más reparador y profundo**, y un **aumento general de la sensación de bienestar y relajación**. Además, son una herramienta poderosa para ayudar en la **recuperación de lesiones y mejorar la flexibilidad** de tu cuerpo.
+                        Los masajes ofrecen una multitud de beneficios transformadores, incluyendo la **reducción profunda del estrés y la ansiedad**, el **alivio efectivo del dolor muscular y la tensión**, una **mejoría significativa de la circulación sanguínea y linfática**, la **promoción de un sueño más reparador y profundo**, y un **aumento general de la sensación de bienestar y relajación**. Además, son una herramienta poderosa para ayudar en la **recuperación de lesiones y mejorar la flexibilidad** de tu cuerpo.
                     </p>
                 </div>
             </div>
@@ -926,24 +942,24 @@
                 author: "Roberto C."
             },
             {
-                quote: "La calidez de las piedras en el masaje es una experiencia que no tiene comparación. Me siento renovado y en paz.",
-                author: "Jorge N."
+                quote: "El ambiente relajante y las manos expertas de Lionel hacen que cada masaje con piedras calientes sea un deleite.",
+                author: "Daniela Q."
             },
             {
-                quote: "Mi dolor de ciática mejoró notablemente con el masaje descontracturante. La atención es muy personalizada y efectiva.",
-                author: "Elena Q."
+                quote: "Mi espalda ha mejorado muchísimo con el masaje descontracturante. Tenía años con el dolor y ya siento alivio.",
+                author: "Francisco X."
             },
             {
-                quote: "La reflexología fue un descubrimiento para mí. Me ayudó a relajarme profundamente y a sentirme más equilibrado.",
-                author: "Pedro V."
+                quote: "La reflexología es mi momento de paz, me ayuda a desconectar y a aliviar la tensión acumulada en los pies.",
+                author: "Laura J."
             },
             {
-                quote: "Siempre salgo renovada después de una sesión de desintoxicación iónica. ¡Mi cuerpo lo agradece!",
-                author: "Marta G."
+                quote: "La desintoxicación iónica me da un impulso de bienestar general. Me siento más limpia y con energía.",
+                author: "Renata A."
             },
             {
-                quote: "El masaje prenatal me alivió las molestias de la espalda y me ayudó a descansar mejor. Una bendición en esta etapa.",
-                author: "Alejandra Z."
+                quote: "Excelente servicio de masaje prenatal. Me sentí muy cómoda y segura en cada sesión. ¡Gracias por cuidarme!",
+                author: "Luciana G."
             },
             {
                 quote: "El paquete reductivo y reafirmante es una gran inversión. ¡Los resultados se ven y se sienten!",
@@ -1150,13 +1166,11 @@
 
             // Lógica para cargar el Consejo del Día
             const dailyAdviceText = document.getElementById('daily-advice-text');
-            const dailyAdviceDate = document.getElementById('daily-advice-date');
+            // Eliminamos la referencia a dailyAdviceDate
+            // const dailyAdviceDate = document.getElementById('daily-advice-date');
 
             // La URL de donde tu página leerá el consejo.
-            // Si alojas tu sitio en GitHub Pages, y el archivo está en la raíz, podría ser '/daily_advice.json'
-            // Si está en una subcarpeta, como 'data/', sería '/data/daily_advice.json'
-            // Para el ejemplo, asumimos que estará en la raíz del mismo dominio.
-            const adviceFileUrl = './daily_advice.json'; // O algo como '/data/daily_advice.json' si lo pones en una carpeta 'data'
+            const adviceFileUrl = './daily_advice.json'; 
 
             fetch(adviceFileUrl)
                 .then(response => {
@@ -1168,21 +1182,21 @@
                 .then(data => {
                     if (data && data.advice) {
                         dailyAdviceText.textContent = `"${data.advice}"`;
-                        if (data.date) {
-                            // Formatear la fecha para que se vea bien en español
-                            const dateOptions = { year: 'numeric', month: 'long', day: 'numeric' };
-                            const formattedDate = new Date(data.date).toLocaleDateString('es-ES', dateOptions);
-                            dailyAdviceDate.textContent = `Actualizado el ${formattedDate}`;
-                        }
+                        // Eliminamos la lógica de la fecha aquí también
+                        // if (data.date) {
+                        //     const dateOptions = { year: 'numeric', month: 'long', day: 'numeric' };
+                        //     const formattedDate = new Date(data.date).toLocaleDateString('es-ES', dateOptions);
+                        //     dailyAdviceDate.textContent = `Actualizado el ${formattedDate}`;
+                        // }
                     } else {
                         dailyAdviceText.textContent = 'No se pudo cargar el consejo del día. ¡Vuelve pronto!';
-                        dailyAdviceDate.textContent = '';
+                        // dailyAdviceDate.textContent = ''; // Eliminamos esta línea
                     }
                 })
                 .catch(error => {
                     console.error('Error al cargar el consejo del día:', error);
                     dailyAdviceText.textContent = 'Parece que hubo un problema cargando el consejo. Por favor, intenta de nuevo más tarde.';
-                    dailyAdviceDate.textContent = '';
+                    // dailyAdviceDate.textContent = ''; // Eliminamos esta línea
                 });
         });
     </script>
